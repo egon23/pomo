@@ -10,12 +10,16 @@
 		7AE6499623E091A600035262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499523E091A600035262 /* AppDelegate.swift */; };
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
 		7AE6499A23E091A600035262 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* FirstViewController.swift */; };
-		7AE6499C23E091A600035262 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499B23E091A600035262 /* SecondViewController.swift */; };
+		7AE6499C23E091A600035262 /* PomoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499B23E091A600035262 /* PomoViewController.swift */; };
 		7AE6499F23E091A600035262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE6499D23E091A600035262 /* Main.storyboard */; };
 		7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649A023E091A600035262 /* pomo.xcdatamodeld */; };
 		7AE649A423E091A700035262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE649A323E091A700035262 /* Assets.xcassets */; };
 		7AE649A723E091A700035262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE649A523E091A700035262 /* LaunchScreen.storyboard */; };
 		7AE649B223E091A700035262 /* pomoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649B123E091A700035262 /* pomoTests.swift */; };
+		7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649BC23E0A22800035262 /* BaseTabBarController.swift */; };
+		7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649BE23E0A50B00035262 /* CustomColor.swift */; };
+		7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C023E0A5AD00035262 /* ProgressBar.swift */; };
+		7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C423E0B5C900035262 /* CountdownTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +37,7 @@
 		7AE6499523E091A600035262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE6499723E091A600035262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7AE6499923E091A600035262 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		7AE6499B23E091A600035262 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		7AE6499B23E091A600035262 /* PomoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoViewController.swift; sourceTree = "<group>"; };
 		7AE6499E23E091A600035262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AE649A123E091A600035262 /* pomo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pomo.xcdatamodel; sourceTree = "<group>"; };
 		7AE649A323E091A700035262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +46,10 @@
 		7AE649AD23E091A700035262 /* pomoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pomoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE649B123E091A700035262 /* pomoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pomoTests.swift; sourceTree = "<group>"; };
 		7AE649B323E091A700035262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AE649BC23E0A22800035262 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		7AE649BE23E0A50B00035262 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		7AE649C023E0A5AD00035262 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		7AE649C423E0B5C900035262 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +94,16 @@
 				7AE6499523E091A600035262 /* AppDelegate.swift */,
 				7AE6499723E091A600035262 /* SceneDelegate.swift */,
 				7AE6499923E091A600035262 /* FirstViewController.swift */,
-				7AE6499B23E091A600035262 /* SecondViewController.swift */,
+				7AE6499B23E091A600035262 /* PomoViewController.swift */,
+				7AE649C023E0A5AD00035262 /* ProgressBar.swift */,
 				7AE6499D23E091A600035262 /* Main.storyboard */,
+				7AE649BE23E0A50B00035262 /* CustomColor.swift */,
 				7AE649A323E091A700035262 /* Assets.xcassets */,
 				7AE649A523E091A700035262 /* LaunchScreen.storyboard */,
 				7AE649A823E091A700035262 /* Info.plist */,
 				7AE649A023E091A600035262 /* pomo.xcdatamodeld */,
+				7AE649BC23E0A22800035262 /* BaseTabBarController.swift */,
+				7AE649C423E0B5C900035262 /* CountdownTimer.swift */,
 			);
 			path = pomo;
 			sourceTree = "<group>";
@@ -206,10 +218,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AE6499C23E091A600035262 /* SecondViewController.swift in Sources */,
+				7AE6499C23E091A600035262 /* PomoViewController.swift in Sources */,
+				7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */,
 				7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */,
+				7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */,
 				7AE6499A23E091A600035262 /* FirstViewController.swift in Sources */,
+				7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */,
 				7AE6499623E091A600035262 /* AppDelegate.swift in Sources */,
+				7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */,
 				7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
