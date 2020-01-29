@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UIDrawer
 
-class PomoViewController: UIViewController, CountdownTimerDelegate {
-    
+class PomoViewController: UIViewController, CountdownTimerDelegate, UIViewControllerTransitioningDelegate {
+
     @IBOutlet weak var progressBar: ProgressBar!
     @IBOutlet weak var minutes: UILabel!
     @IBOutlet weak var seconds: UILabel!
@@ -17,7 +18,6 @@ class PomoViewController: UIViewController, CountdownTimerDelegate {
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
     
-    let tasks = ["chill", "sleep", "eat", "gym"]
     //MARK - Vars
     
     var countdownTimerDidStart = false
@@ -117,6 +117,21 @@ class PomoViewController: UIViewController, CountdownTimerDelegate {
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
     }
+    @IBAction func showTasks(_ sender: UIButton) {
+        let viewController = storyboard?.instantiateViewController(identifier: "TaskPickerViewController") as! TaskPickerViewController
+        viewController.modalPresentationStyle = .custom
+        viewController.transitioningDelegate = self
+        self.present(viewController, animated: true)
+    }
     
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return DrawerPresentationController(presentedViewController: presented, presenting: presenting, blurEffectStyle: .dark)
+    }
 }
 
+
+extension PomoViewController: DrawerPresentationControllerDelegate {
+    func drawerMovedTo(position: DraweSnapPoint) {
+        
+    }
+}

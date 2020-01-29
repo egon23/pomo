@@ -1,0 +1,25 @@
+{
+  "name": "UIDrawer",
+  "version": "1.0",
+  "summary": "A short description of UIDrawer.",
+  "description": "UIDrawer is a customizable UIPresentationController that allows modals to be presented like a bottom sheet. It supports dragging up and down, multiple snap points, swipe down to close and Customization.",
+  "homepage": "https://github.com/Que20/UIDrawer",
+  "screenshots": "https://github.com/Que20/UIDrawer/raw/master/demo.gif",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Kevin Maarek": "me@kevinmaarek.fr"
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "source": {
+    "git": "https://github.com/Que20/UIDrawer.git",
+    "tag": "1.0"
+  },
+  "source_files": "UIDrawer",
+  "swift_versions": "4.2",
+  "swift_version": "4.2"
+}

@@ -1,0 +1,6 @@
+framework module UIDrawer {
+  umbrella header "UIDrawer-umbrella.h"
+
+  export *
+  module * { export * }
+}
