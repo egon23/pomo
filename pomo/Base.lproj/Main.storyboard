@@ -261,7 +261,9 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
                                 <state key="normal" title="START"/>
                                 <connections>
-                                    <action selector="startTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="NTW-xA-X98"/>
+                                    <segue destination="DyQ-9W-phi" kind="popoverPresentation" popoverAnchorView="CCv-UT-kMl" id="btj-Jb-qlM">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-Ic-oUF">
@@ -299,6 +301,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="726"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1gD-RT-Das">
+            <objects>
+                <viewController id="DyQ-9W-phi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pu7-i8-1Fa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wES-Lj-AWD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0OQ-gu-4hy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="762"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2hG-dm-LoO">

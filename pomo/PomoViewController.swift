@@ -9,6 +9,7 @@
 import UIKit
 
 class PomoViewController: UIViewController, CountdownTimerDelegate {
+    
     @IBOutlet weak var progressBar: ProgressBar!
     @IBOutlet weak var minutes: UILabel!
     @IBOutlet weak var seconds: UILabel!
@@ -16,6 +17,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate {
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
     
+    let tasks = ["chill", "sleep", "eat", "gym"]
     //MARK - Vars
     
     var countdownTimerDidStart = false
@@ -44,7 +46,6 @@ class PomoViewController: UIViewController, CountdownTimerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         countdownTimer.delegate = self
         countdownTimer.setTimer(hours: 0, minutes: 0, seconds: selectedSecs)
         progressBar.setProgressBar(hours: 0, minutes: 0, seconds: selectedSecs)
