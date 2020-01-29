@@ -21,7 +21,7 @@
 		7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C023E0A5AD00035262 /* ProgressBar.swift */; };
 		7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C423E0B5C900035262 /* CountdownTimer.swift */; };
 		F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD69DD23E1B1580013411F /* DayCell.swift */; };
-		F8E3079523E1BA3B00EFE453 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079423E1BA3B00EFE453 /* DayViewController.swift */; };
+		F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079823E1C65D00EFE453 /* DayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		7AE649C023E0A5AD00035262 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		7AE649C423E0B5C900035262 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 		F8CD69DD23E1B1580013411F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
-		F8E3079423E1BA3B00EFE453 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		F8E3079823E1C65D00EFE453 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 				7AE649BC23E0A22800035262 /* BaseTabBarController.swift */,
 				7AE649C423E0B5C900035262 /* CountdownTimer.swift */,
 				F8CD69DD23E1B1580013411F /* DayCell.swift */,
-				F8E3079423E1BA3B00EFE453 /* DayViewController.swift */,
+				F8E3079823E1C65D00EFE453 /* DayViewController.swift */,
 			);
 			path = pomo;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 			files = (
 				7AE6499C23E091A600035262 /* PomoViewController.swift in Sources */,
 				7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */,
-				F8E3079523E1BA3B00EFE453 /* DayViewController.swift in Sources */,
+				F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */,
 				F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */,
 				7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */,
 				7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */,

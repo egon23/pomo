@@ -193,10 +193,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="5Fi-x5-WtX"/>
                     <connections>
-                        <outlet property="activeTimeLabel" destination="gZg-ij-ipx" id="Ths-cI-qjt"/>
-                        <outlet property="breakTimeLabel" destination="seJ-n6-GJ8" id="LUR-09-KLB"/>
-                        <outlet property="dateLabel" destination="Pwz-6q-TFB" id="rYT-RY-tuK"/>
-                        <outlet property="tasksLabel" destination="Z6q-51-gcL" id="2wI-OQ-kis"/>
+                        <outlet property="activeTimeLabel" destination="gZg-ij-ipx" id="dV0-KT-nuf"/>
+                        <outlet property="breakTimeLabel" destination="seJ-n6-GJ8" id="SYA-9G-MUo"/>
+                        <outlet property="dateLabel" destination="Pwz-6q-TFB" id="qz2-db-LT5"/>
+                        <outlet property="tasksLabel" destination="Z6q-51-gcL" id="1Zv-OO-w6d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvY-wE-I33" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
