@@ -17,6 +17,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Days"
+        
         daysTableView.delegate = self
         daysTableView.dataSource = self
         

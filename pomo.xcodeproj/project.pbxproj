@@ -22,6 +22,9 @@
 		7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C423E0B5C900035262 /* CountdownTimer.swift */; };
 		F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD69DD23E1B1580013411F /* DayCell.swift */; };
 		F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079823E1C65D00EFE453 /* DayViewController.swift */; };
+		F8E3079B23E1CE6F00EFE453 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */; };
+		F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079C23E1D31900EFE453 /* SettingsCell.swift */; };
+		F8E3079F23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		7AE649C423E0B5C900035262 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 		F8CD69DD23E1B1580013411F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		F8E3079823E1C65D00EFE453 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F8E3079C23E1D31900EFE453 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,9 @@
 				7AE649C423E0B5C900035262 /* CountdownTimer.swift */,
 				F8CD69DD23E1B1580013411F /* DayCell.swift */,
 				F8E3079823E1C65D00EFE453 /* DayViewController.swift */,
+				F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */,
+				F8E3079C23E1D31900EFE453 /* SettingsCell.swift */,
+				F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */,
 			);
 			path = pomo;
 			sourceTree = "<group>";
@@ -228,13 +237,16 @@
 				7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */,
 				F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */,
 				F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */,
+				F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */,
 				7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */,
 				7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */,
 				7AE6499A23E091A600035262 /* FirstViewController.swift in Sources */,
 				7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */,
+				F8E3079F23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift in Sources */,
 				7AE6499623E091A600035262 /* AppDelegate.swift in Sources */,
 				7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */,
 				7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */,
+				F8E3079B23E1CE6F00EFE453 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
