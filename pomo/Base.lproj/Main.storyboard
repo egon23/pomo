@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="84.057971014492765" y="725.89285714285711"/>
         </scene>
-        <!--Second-->
+        <!--Pomo View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="PomoViewController" customModule="pomo" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-eh-Nbo" customClass="ProgressBar" customModule="countdownDemo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-eh-Nbo" customClass="ProgressBar" customModule="pomo" customModuleProvider="target">
                                 <rect key="frame" x="57" y="114" width="300" height="300"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -125,7 +125,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxs-Xk-O2M"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" image="plus" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="counterView" destination="Owb-Jl-a5r" id="my3-GI-gW8"/>
                         <outlet property="minutes" destination="4Kt-iq-qv3" id="2tQ-zs-kDe"/>
@@ -179,11 +179,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Navigation Controller-->
         <scene sceneID="cqQ-k8-31v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kre-Rb-Bay" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="chart.bar.fill" catalog="system" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rfW-9e-9jL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -198,11 +198,11 @@
             </objects>
             <point key="canvasLocation" x="-826.08695652173924" y="725.89285714285711"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="rXO-Oj-kgP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z88-aT-Yeg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9Fo-EL-lt4"/>
+                    <tabBarItem key="tabBarItem" title="" image="list.bullet" catalog="system" id="9Fo-EL-lt4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ej8-Nh-KxI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -219,7 +219,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="chart.bar.fill" catalog="system" width="64" height="44"/>
+        <image name="list.bullet" catalog="system" width="64" height="44"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>
