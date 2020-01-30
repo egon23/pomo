@@ -92,7 +92,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     
     // Test, for dev
-    let selectedSecs:Int = 1200
+    let selectedSecs:Int = 12
     
     
     lazy var messageLabel: UILabel = {
