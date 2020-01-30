@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import CoreData
 //import UIDrawer
 
 class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-    let tasks = ["chill", "sleep", "eat", "gym"]
+    
+    var tasks: [Task] = []
+    public var selectedTask: Task?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Task")) as! [Task]
+        
+        self.tasks = data
+    }
 
     @IBOutlet weak var progressBar: ProgressBar!
     @IBOutlet weak var minutes: UILabel!
@@ -23,6 +33,10 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     var myPicker: UIPickerView! = UIPickerView()
     @IBAction func changeTask(_ sender: Any) {
         taskField.becomeFirstResponder()
+    }
+    
+    func addSecond(){
+        selectedTask?.workedHours = (selectedTask?.workedHours ?? 0) + 1
     }
     
     @IBAction func selectTask(_ sender: UITextField) {
@@ -56,8 +70,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     @objc func setTask(sender:UIButton) {
         //Remove view when select cancel
-        taskField.text = tasks[myPicker.selectedRow(inComponent: 0)]
+        taskField.text = tasks[myPicker.selectedRow(inComponent: 0)].name
         self.taskField.resignFirstResponder() // To resign the inputView on clicking done.
+        selectedTask = tasks[myPicker.selectedRow(inComponent: 0)]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -71,13 +86,13 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == myPicker {
-            return tasks[row]
+            return tasks[row].name
         }
         return " "
     }
 
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: tasks[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        return NSAttributedString(string: tasks[row].name ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     }
 
     
@@ -135,6 +150,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
         minutes.text = time.minutes
         seconds.text = time.seconds
+        selectedTask?.workedHours += 0.01
     }
     
     
@@ -148,9 +164,33 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
         progressBar.stop()
-       
         
+        updateData()
         print("countdownTimerDone")
+    }
+    
+    func updateData() {
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", selectedTask!.name!)
+        
+        do {
+            let test = try UIApplication.appDelegate.managedContext?.fetch(fetchRequest)
+            
+            let objectUpdate = test?[0] as! Task
+            objectUpdate.workedHours = selectedTask!.workedHours
+            print(objectUpdate.workedHours)
+            do {
+                UIApplication.appDelegate.saveContext()
+            }
+            catch {
+                print(error)
+            }
+        }
+        catch {
+            print(error)
+        }
+            
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
@@ -181,6 +221,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         stopBtn.isEnabled = false
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
+        print(selectedTask?.workedHours)
     }
 //    @IBAction func showTasks(_ sender: UIButton) {
 //        let viewController = storyboard?.instantiateViewController(identifier: "TaskPickerViewController") as! TaskPickerViewController
@@ -196,7 +237,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
 
 //
 //extension PomoViewController: DrawerPresentationControllerDelegate {
-//    func drawerMovedTo(position: DraweSnapPoint) {
+//    func drawerMovedTo(positio""n: DraweSnapPoint) {
 //
 //    }
 //}

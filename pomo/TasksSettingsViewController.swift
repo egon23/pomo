@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class TasksSettingsViewController: UITableViewController {
 
     
-    var tasks: [Taskk] = []
+    var tasks: [Task] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Task")) as! [Task]
+        
+        self.tasks = data
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +44,13 @@ class TasksSettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
         
-        tasks[indexPath.row].hoursWorked = 3
+        
         
         cell.titleLabel.text = tasks[indexPath.row].name
-        cell.timeLabel.text = "\(Int(tasks[indexPath.row].hoursWorked))/\(Int(tasks[indexPath.row].estimatedHours))"
-        cell.deadlineLabel.text = tasks[indexPath.row].date
+        cell.timeLabel.text = "\(Int(tasks[indexPath.row].workedHours))/\(Int(tasks[indexPath.row].estimatedHours))"
+        //cell.deadlineLabel.text = tasks[indexPath.row].deadline
         
-        let progress = Int(tasks[indexPath.row].hoursWorked/tasks[indexPath.row].estimatedHours*100)
+        let progress = Int(tasks[indexPath.row].workedHours/tasks[indexPath.row].estimatedHours*100)
         cell.progressLabel.text = "\(progress)%"
         
         cell.titleLabel.sizeToFit()
@@ -60,9 +69,11 @@ class TasksSettingsViewController: UITableViewController {
     
     @IBAction func didUnwind(_ sender: UIStoryboardSegue){
         guard let vc = sender.source as? AddTaskViewController else {return}
-        let task: Taskk = Taskk(name: vc.titelTextField.text ?? "", estimatedHours: Float(vc.hoursTextField.text ?? "")!)
-        tasks.append(task)
-        tableView.reloadData()
+        let task1: Taskk = Taskk(name: vc.titelTextField.text ?? "", estimatedHours: Float(vc.hoursTextField.text ?? "")!)
+        let task: Task = Task(context: UIApplication.appDelegate.managedContext!)
+        task.name = vc.titelTextField.text ?? "New Task"
+        task.estimatedHours = Double(vc.hoursTextField.text ?? "")!
+        UIApplication.appDelegate.saveContext()
     }
    
     
@@ -114,14 +125,3 @@ class TasksSettingsViewController: UITableViewController {
 
 }
 
-extension TasksSettingsViewController: AddTaskDelegate{
-    
-    func addTask(task: Taskk) {
-        print("test")
-        self.dismiss(animated: true) {
-            self.tasks.append(task)
-            self.tableView.reloadData()
-        }
-    }
-    
-}
