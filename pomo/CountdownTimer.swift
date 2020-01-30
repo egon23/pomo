@@ -20,6 +20,10 @@ class CountdownTimer {
     fileprivate var seconds = 0.0
     fileprivate var duration = 0.0
     
+    var diffHrs = 0
+    var diffMins = 0
+    var diffSecs = 0
+
     lazy var timer: Timer = {
         let timer = Timer()
         return timer
@@ -83,11 +87,25 @@ class CountdownTimer {
     }
     
     
+    func removeSavedDate() {
+        if (UserDefaults.standard.object(forKey: "savedTime") as? Date) != nil {
+            UserDefaults.standard.removeObject(forKey: "savedTime")
+        }
+    }
     
+    func resumeFromBackground() {
+        if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
+            (diffHrs, diffMins, diffSecs) = CountdownTimer.getTimeDifference(startDate: savedDate)
+            duration -= Double(diffSecs + (diffHrs * 3600) + (diffMins * 60))
+            delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
+        }
+    }
     
-    
-    
-    
+    static func getTimeDifference(startDate: Date) -> (Int, Int, Int) {
+       let calendar = Calendar.current
+       let components = calendar.dateComponents([.hour, .minute, .second], from: startDate, to: Date())
+       return(components.hour!, components.minute!, components.second!)
+    }
     
     
 }

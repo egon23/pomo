@@ -92,7 +92,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     
     // Test, for dev
-    let selectedSecs:Int = 12
+    let selectedSecs:Int = 1200
     
     
     lazy var messageLabel: UILabel = {
@@ -125,6 +125,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
         self.view.addConstraint(constraintCenter)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
         messageLabel.isHidden = true
         counterView.isHidden = false
     }
@@ -148,7 +150,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
         progressBar.stop()
-       
+        countdownTimer.removeSavedDate()
         
         print("countdownTimerDone")
     }
@@ -182,6 +184,23 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
     }
+    
+
+        @objc func pauseWhenBackground(noti: Notification) {
+            if countdownTimerDidStart {
+                print("hthz")
+                let shared = UserDefaults.standard
+                shared.set(Date(), forKey: "savedTime")
+            }
+        }
+        
+        @objc func willEnterForeground(noti: Notification) {
+            if countdownTimerDidStart {
+                print("ffh")
+                countdownTimer.resumeFromBackground()
+            }
+        }
+        
 //    @IBAction func showTasks(_ sender: UIButton) {
 //        let viewController = storyboard?.instantiateViewController(identifier: "TaskPickerViewController") as! TaskPickerViewController
 //        viewController.modalPresentationStyle = .custom
