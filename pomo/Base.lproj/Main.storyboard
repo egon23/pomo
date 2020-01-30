@@ -261,7 +261,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
                                 <state key="normal" title="START"/>
                                 <connections>
-                                    <action selector="showTasks:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="72d-FV-2oI"/>
+                                    <action selector="startTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Kgq-aO-4HD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-Ic-oUF">
@@ -272,6 +272,18 @@
                                     <action selector="stopTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8eH-xz-gQc"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Task" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-T7-bRL">
+                                <rect key="frame" x="159" y="545" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="changeTask:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="oeE-rH-35o"/>
+                                    <action selector="selectTask:" destination="8rJ-Kc-sve" eventType="editingDidBegin" id="ooi-kg-ARb"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -294,6 +306,7 @@
                         <outlet property="seconds" destination="2qk-e4-jh4" id="0QC-lU-kkE"/>
                         <outlet property="startBtn" destination="CCv-UT-kMl" id="Wob-Nd-7AC"/>
                         <outlet property="stopBtn" destination="zsf-Ic-oUF" id="g3S-4M-RU5"/>
+                        <outlet property="taskField" destination="fFe-T7-bRL" id="g5s-ah-hKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -315,7 +328,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="mFk-Jb-hLq">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="oH5-il-wh8"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="oH5-il-wh8">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="kAp-gJ-GS0" id="DOR-1Z-waZ"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="n3o-m6-aGm"/>
                                     </navigationItem>
                                 </items>

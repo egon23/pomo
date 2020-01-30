@@ -49,7 +49,7 @@ class ProgressBar: UIView, CAAnimationDelegate {
         fgProgressLayer.backgroundColor = UIColor.clear.cgColor
         fgProgressLayer.fillColor = nil
         fgProgressLayer.strokeColor = UIColor.black.cgColor
-        fgProgressLayer.lineWidth = 4.0
+        fgProgressLayer.lineWidth = 8.0
         fgProgressLayer.strokeStart = 0.0
         fgProgressLayer.strokeEnd = 0.0
         
@@ -173,7 +173,6 @@ class ProgressBar: UIView, CAAnimationDelegate {
         
     }
     
-    
     fileprivate func resumeAnimation(){
         let pausedTime = fgProgressLayer.timeOffset
         fgProgressLayer.speed = 1.0
@@ -183,10 +182,11 @@ class ProgressBar: UIView, CAAnimationDelegate {
         fgProgressLayer.beginTime = timeSincePause
     }
     
-    internal func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        stopAnimation()
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            stopAnimation()
+        }
     }
-    
     
 }
 

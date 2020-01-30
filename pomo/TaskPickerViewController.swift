@@ -39,4 +39,7 @@ class TaskPickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
         taskPicker.delegate = self
         taskPicker.dataSource = self
     }
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
 }
