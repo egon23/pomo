@@ -14,7 +14,6 @@
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
 		7AE6499A23E091A600035262 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* FirstViewController.swift */; };
 		7AE6499C23E091A600035262 /* PomoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499B23E091A600035262 /* PomoViewController.swift */; };
-		7AE6499F23E091A600035262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE6499D23E091A600035262 /* Main.storyboard */; };
 		7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649A023E091A600035262 /* pomo.xcdatamodeld */; };
 		7AE649A423E091A700035262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE649A323E091A700035262 /* Assets.xcassets */; };
 		7AE649A723E091A700035262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE649A523E091A700035262 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,10 @@
 		F8E3079B23E1CE6F00EFE453 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */; };
 		F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079C23E1D31900EFE453 /* SettingsCell.swift */; };
 		F8E3079F23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */; };
+		F8E307A123E1F3C500EFE453 /* TasksSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */; };
+		F8E307A323E1F72500EFE453 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */; };
+		F8E307A623E2078300EFE453 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8E307A423E2078300EFE453 /* Main.storyboard */; };
+		F8E307A823E214EA00EFE453 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E307A723E214EA00EFE453 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,6 @@
 		7AE6499723E091A600035262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7AE6499923E091A600035262 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		7AE6499B23E091A600035262 /* PomoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoViewController.swift; sourceTree = "<group>"; };
-		7AE6499E23E091A600035262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AE649A123E091A600035262 /* pomo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pomo.xcdatamodel; sourceTree = "<group>"; };
 		7AE649A323E091A700035262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AE649A623E091A700035262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +72,10 @@
 		F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F8E3079C23E1D31900EFE453 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingsTableViewController.swift; sourceTree = "<group>"; };
+		F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSettingsViewController.swift; sourceTree = "<group>"; };
+		F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		F8E307A523E2078300EFE453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8E307A723E214EA00EFE453 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +132,11 @@
 		7AE6499423E091A600035262 /* pomo */ = {
 			isa = PBXGroup;
 			children = (
+				F8E307A423E2078300EFE453 /* Main.storyboard */,
 				7AE6499523E091A600035262 /* AppDelegate.swift */,
 				7AE6499723E091A600035262 /* SceneDelegate.swift */,
 				7AE6499B23E091A600035262 /* PomoViewController.swift */,
 				7AE649C023E0A5AD00035262 /* ProgressBar.swift */,
-				7AE6499D23E091A600035262 /* Main.storyboard */,
 				7AE649BE23E0A50B00035262 /* CustomColor.swift */,
 				7AE649A323E091A700035262 /* Assets.xcassets */,
 				7AE6499923E091A600035262 /* FirstViewController.swift */,
@@ -144,6 +150,9 @@
 				F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */,
 				F8E3079C23E1D31900EFE453 /* SettingsCell.swift */,
 				F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */,
+				F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */,
+				F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */,
+				F8E307A723E214EA00EFE453 /* TaskCell.swift */,
 				7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */,
 			);
 			path = pomo;
@@ -251,9 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8E307A623E2078300EFE453 /* Main.storyboard in Resources */,
 				7AE649A723E091A700035262 /* LaunchScreen.storyboard in Resources */,
 				7AE649A423E091A700035262 /* Assets.xcassets in Resources */,
-				7AE6499F23E091A600035262 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AE6499C23E091A600035262 /* PomoViewController.swift in Sources */,
+				F8E307A823E214EA00EFE453 /* TaskCell.swift in Sources */,
+				F8E307A323E1F72500EFE453 /* AddTaskViewController.swift in Sources */,
 				7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */,
 				F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */,
 				F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */,
@@ -350,6 +361,7 @@
 				7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */,
 				7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */,
 				F8E3079B23E1CE6F00EFE453 /* SettingsViewController.swift in Sources */,
+				F8E307A123E1F3C500EFE453 /* TasksSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,20 +384,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7AE6499D23E091A600035262 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7AE6499E23E091A600035262 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7AE649A523E091A700035262 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7AE649A623E091A700035262 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F8E307A423E2078300EFE453 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8E307A523E2078300EFE453 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -511,14 +523,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZ9J437R93;
+				DEVELOPMENT_TEAM = G9R3T4GU5H;
 				INFOPLIST_FILE = pomo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mc.pomo;
+				PRODUCT_BUNDLE_IDENTIFIER = roli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,14 +543,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FZ9J437R93;
+				DEVELOPMENT_TEAM = G9R3T4GU5H;
 				INFOPLIST_FILE = pomo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mc.pomo;
+				PRODUCT_BUNDLE_IDENTIFIER = roli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
