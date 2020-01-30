@@ -2,24 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Task+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Task+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Day+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Day+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Session+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Session+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:pomo.xcodeproj">
    </FileRef>
    <FileRef
