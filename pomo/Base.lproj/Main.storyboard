@@ -212,7 +212,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-eh-Nbo" customClass="ProgressBar" customModule="pomo" customModuleProvider="target">
-                                <rect key="frame" x="32" y="114" width="350" height="350"/>
+                                <rect key="frame" x="32" y="145.5" width="350" height="350"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="mfB-3B-GYE"/>
@@ -220,7 +220,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owb-Jl-a5r">
-                                <rect key="frame" x="163" y="265" width="88" height="48"/>
+                                <rect key="frame" x="163" y="296.5" width="88" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kt-iq-qv3">
                                         <rect key="frame" x="0.0" y="0.0" width="39" height="48"/>
@@ -256,24 +256,37 @@
                                     <constraint firstAttribute="height" constant="48" id="aa3-Ux-95v"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-UT-kMl">
-                                <rect key="frame" x="287" y="724" width="77" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-UT-kMl" customClass="RoundButton" customModule="pomo" customModuleProvider="target">
+                                <rect key="frame" x="147" y="665" width="120" height="44"/>
+                                <color key="backgroundColor" red="0.2856808710823095" green="0.64434909326424872" blue="0.044842203259517342" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="N0B-Hq-B6Q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="START"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="NTW-xA-X98"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-Ic-oUF">
-                                <rect key="frame" x="50" y="724" width="65" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="STOP"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-Ic-oUF">
+                                <rect key="frame" x="50" y="733.5" width="37.5" height="34.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="stop.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="stopTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8eH-xz-gQc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a task.." textAlignment="center" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="err-br-tXO">
-                                <rect key="frame" x="99.5" y="564" width="215" height="44.5"/>
+                                <rect key="frame" x="99.5" y="570.5" width="215" height="44.5"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -283,26 +296,49 @@
                                     <action selector="selectTask:" destination="8rJ-Kc-sve" eventType="editingDidBegin" id="c0A-mX-AZU"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juu-Ck-B2R">
+                                <rect key="frame" x="308.5" y="734.5" width="55.5" height="33.5"/>
+                                <state key="normal" image="forward.fill" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipCycle:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="EIl-zX-KIt"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Pomodoro" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ry-50-mGv">
+                                <rect key="frame" x="138" y="64" width="138" height="31.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="4" height="3"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="trailing" secondItem="Juu-Ck-B2R" secondAttribute="trailing" constant="50" id="2S5-VH-ahp"/>
+                            <constraint firstItem="7ry-50-mGv" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="5oY-au-duW"/>
                             <constraint firstItem="err-br-tXO" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="9j6-qE-foI"/>
-                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="CCv-UT-kMl" secondAttribute="bottom" constant="45" id="F17-1a-jj4"/>
-                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="top" secondItem="nxs-Xk-O2M" secondAttribute="top" constant="70" id="Nz3-iF-PQ9"/>
-                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="trailing" secondItem="CCv-UT-kMl" secondAttribute="trailing" constant="50" id="QvR-1T-bSl"/>
+                            <constraint firstItem="7ry-50-mGv" firstAttribute="top" secondItem="nxs-Xk-O2M" secondAttribute="top" constant="20" id="L8Q-FX-kgE"/>
+                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="top" secondItem="7ry-50-mGv" secondAttribute="bottom" constant="50" id="Nz3-iF-PQ9"/>
                             <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="zsf-Ic-oUF" secondAttribute="bottom" constant="45" id="RbH-o5-H6E"/>
                             <constraint firstItem="UaR-eh-Nbo" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="VNJ-Tz-vHb"/>
                             <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="Z0I-Vp-z4q"/>
                             <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerY" secondItem="UaR-eh-Nbo" secondAttribute="centerY" id="a4s-Q9-XP2"/>
-                            <constraint firstItem="err-br-tXO" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="100" id="h6o-g1-AHb"/>
+                            <constraint firstItem="CCv-UT-kMl" firstAttribute="top" secondItem="err-br-tXO" secondAttribute="bottom" constant="50" id="eUT-ya-jwD"/>
+                            <constraint firstItem="err-br-tXO" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="75" id="h6o-g1-AHb"/>
                             <constraint firstItem="zsf-Ic-oUF" firstAttribute="leading" secondItem="nxs-Xk-O2M" secondAttribute="leading" constant="50" id="xDn-Hp-LjY"/>
+                            <constraint firstItem="CCv-UT-kMl" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="xri-VU-vXh"/>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="Juu-Ck-B2R" secondAttribute="bottom" constant="45" id="xuV-BT-OBU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxs-Xk-O2M"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="plus" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="counterView" destination="Owb-Jl-a5r" id="my3-GI-gW8"/>
+                        <outlet property="cycleCountLabel" destination="7ry-50-mGv" id="oBH-yb-gFI"/>
                         <outlet property="minutes" destination="4Kt-iq-qv3" id="2tQ-zs-kDe"/>
+                        <outlet property="nextBtn" destination="Juu-Ck-B2R" id="IVr-lC-G3r"/>
                         <outlet property="progressBar" destination="UaR-eh-Nbo" id="p1N-Fy-g4i"/>
                         <outlet property="seconds" destination="2qk-e4-jh4" id="0QC-lU-kkE"/>
                         <outlet property="startBtn" destination="CCv-UT-kMl" id="Wob-Nd-7AC"/>
@@ -750,7 +786,9 @@
     </scenes>
     <resources>
         <image name="chart.bar.fill" catalog="system" width="64" height="44"/>
+        <image name="forward.fill" catalog="system" width="64" height="38"/>
         <image name="list.bullet" catalog="system" width="64" height="44"/>
         <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="stop.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

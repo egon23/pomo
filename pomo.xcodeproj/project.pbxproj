@@ -10,6 +10,8 @@
 		04AD7E98867AE6815CEC5C60 /* Pods_pomo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B53D21541750B60FBE112FB /* Pods_pomo.framework */; };
 		5CC028D5BD401ADE04230ADA /* Pods_pomoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4509909E65A60BDCB3E11C98 /* Pods_pomoTests.framework */; };
 		7A08025323E1FA7C00FC4C08 /* TaskPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */; };
+		7A08029123E3648F00FC4C08 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08028F23E3648F00FC4C08 /* RoundLabel.swift */; };
+		7A08029223E3648F00FC4C08 /* roundbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08029023E3648F00FC4C08 /* roundbutton.swift */; };
 		7AE6499623E091A600035262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499523E091A600035262 /* AppDelegate.swift */; };
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
 		7AE6499A23E091A600035262 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* FirstViewController.swift */; };
@@ -48,6 +50,8 @@
 		4509909E65A60BDCB3E11C98 /* Pods_pomoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pomoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4B88AA61CB41A882999BA4 /* Pods-pomo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomo.release.xcconfig"; path = "Target Support Files/Pods-pomo/Pods-pomo.release.xcconfig"; sourceTree = "<group>"; };
 		7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPickerViewController.swift; sourceTree = "<group>"; };
+		7A08028F23E3648F00FC4C08 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
+		7A08029023E3648F00FC4C08 /* roundbutton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundbutton.swift; sourceTree = "<group>"; };
 		7A3CB74650EF1488BB059782 /* Pods-pomoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomoTests.release.xcconfig"; path = "Target Support Files/Pods-pomoTests/Pods-pomoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AE6499223E091A600035262 /* pomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE6499523E091A600035262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7A08028E23E3644600FC4C08 /* Button_Label_Round */ = {
+			isa = PBXGroup;
+			children = (
+				7A08029023E3648F00FC4C08 /* roundbutton.swift */,
+				7A08028F23E3648F00FC4C08 /* RoundLabel.swift */,
+			);
+			path = Button_Label_Round;
+			sourceTree = "<group>";
+		};
 		7AE6498923E091A600035262 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 		7AE6499423E091A600035262 /* pomo */ = {
 			isa = PBXGroup;
 			children = (
+				7A08028E23E3644600FC4C08 /* Button_Label_Round */,
 				F8E307A423E2078300EFE453 /* Main.storyboard */,
 				7AE6499523E091A600035262 /* AppDelegate.swift */,
 				7AE6499723E091A600035262 /* SceneDelegate.swift */,
@@ -348,6 +362,8 @@
 				F8E307A823E214EA00EFE453 /* TaskCell.swift in Sources */,
 				F8E307A323E1F72500EFE453 /* AddTaskViewController.swift in Sources */,
 				7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */,
+				7A08029223E3648F00FC4C08 /* roundbutton.swift in Sources */,
+				7A08029123E3648F00FC4C08 /* RoundLabel.swift in Sources */,
 				F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */,
 				F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */,
 				7A08025323E1FA7C00FC4C08 /* TaskPickerViewController.swift in Sources */,

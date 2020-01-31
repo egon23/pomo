@@ -8,12 +8,42 @@
 
 import UIKit
 import CoreData
-//import UIDrawer
 
 class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var countdownTimeInMinutes: Int = 1
+    var pomoCycleCounter = 0
+    var countdownTimerDidStart = false
+    var isTimeForBreak = false
+    
+    lazy var countdownTimer: CountdownTimer = {
+        let countdownTimer = CountdownTimer()
+        return countdownTimer
+    }()
+    
     var tasks: [Task] = []
     public var selectedTask: Task?
+    
+    @IBOutlet weak var progressBar: ProgressBar!
+    @IBOutlet weak var minutes: UILabel!
+    @IBOutlet weak var seconds: UILabel!
+    @IBOutlet weak var counterView: UIStackView!
+    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var taskField: UITextField!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var cycleCountLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        myPicker = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
+        myPicker.delegate = self
+        myPicker.dataSource = self
+        countdownTimer.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,21 +52,10 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         self.tasks = data
     }
 
-    @IBOutlet weak var progressBar: ProgressBar!
-    @IBOutlet weak var minutes: UILabel!
-    @IBOutlet weak var seconds: UILabel!
-    @IBOutlet weak var counterView: UIStackView!
-    @IBOutlet weak var startBtn: UIButton!
-    @IBOutlet weak var stopBtn: UIButton!
-    @IBOutlet weak var taskField: UITextField!
-
+    // MARK: - PickerView for Tasks
     var myPicker: UIPickerView! = UIPickerView()
     @IBAction func changeTask(_ sender: Any) {
         taskField.becomeFirstResponder()
-    }
-    
-    func addSecond(){
-        selectedTask?.workedHours = (selectedTask?.workedHours ?? 0) + 1
     }
     
     @IBAction func selectTask(_ sender: UITextField) {
@@ -73,6 +92,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         taskField.text = tasks[myPicker.selectedRow(inComponent: 0)].name
         self.taskField.resignFirstResponder() // To resign the inputView on clicking done.
         selectedTask = tasks[myPicker.selectedRow(inComponent: 0)]
+        startBtn.isEnabled = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -95,57 +115,6 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         return NSAttributedString(string: tasks[row].name ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     }
 
-    
-    //MARK - Vars
-    
-    var countdownTimerDidStart = false
-    
-    lazy var countdownTimer: CountdownTimer = {
-        let countdownTimer = CountdownTimer()
-        return countdownTimer
-    }()
-    
-    
-    // Test, for dev
-    let selectedSecs:Int = 1200
-    
-    
-    lazy var messageLabel: UILabel = {
-        let label = UILabel(frame:CGRect.zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 24.0, weight: UIFont.Weight.light)
-        label.textColor = UIColor.white
-        label.textAlignment = .center
-        label.text = "Done!"
-        
-        return label
-    }()
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.myPicker = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
-        self.myPicker.delegate = self
-        self.myPicker.dataSource = self
-        countdownTimer.delegate = self
-        countdownTimer.setTimer(hours: 0, minutes: 0, seconds: selectedSecs)
-        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: selectedSecs)
-        stopBtn.isEnabled = false
-        stopBtn.alpha = 0.5
-        
-        view.addSubview(messageLabel)
-        
-        var constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
-        self.view.addConstraint(constraintCenter)
-        constraintCenter = NSLayoutConstraint(item: messageLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
-        self.view.addConstraint(constraintCenter)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
-        messageLabel.isHidden = true
-        counterView.isHidden = false
-    }
-    
     //MARK: - Countdown Timer Delegate
     
     func countdownTime(time: (hours: String, minutes: String, seconds: String)) {
@@ -157,23 +126,18 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     
     func countdownTimerDone() {
-        
-        counterView.isHidden = true
-        messageLabel.isHidden = false
-        seconds.text = String(selectedSecs)
         countdownTimerDidStart = false
         stopBtn.isEnabled = false
-        stopBtn.alpha = 0.5
         startBtn.setTitle("START",for: .normal)
         progressBar.stop()
         countdownTimer.removeSavedDate()
         
         updateData()
         print("countdownTimerDone")
+        startTimer(startBtn)
     }
     
     func updateData() {
-        
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
         fetchRequest.predicate = NSPredicate(format: "name = %@", selectedTask!.name!)
         
@@ -183,32 +147,42 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             let objectUpdate = test?[0] as! Task
             objectUpdate.workedHours = selectedTask!.workedHours
             print(objectUpdate.workedHours)
-            do {
-                UIApplication.appDelegate.saveContext()
-            }
-            catch {
-                print(error)
-            }
-        }
-        catch {
+            UIApplication.appDelegate.saveContext()
+        } catch {
             print(error)
         }
             
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
-        messageLabel.isHidden = true
-        counterView.isHidden = false
-        
+        cycleCountLabel.isHidden = false
         stopBtn.isEnabled = true
-        stopBtn.alpha = 1.0
-        
+        nextBtn.isEnabled = true
+        if isTimeForBreak {
+            countdownTimeInMinutes = 5
+            cycleCountLabel.text = "Break"
+            isTimeForBreak = false
+            if pomoCycleCounter == 4 {
+                countdownTimeInMinutes = 15
+                pomoCycleCounter = 0
+            }
+        } else {
+            countdownTimeInMinutes = 25
+            pomoCycleCounter += 1
+            cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
+            isTimeForBreak = true
+        }
+        countdownTimer.setTimer(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
+        progressBar.setProgressBar(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
+        startTimerCycle()
+    }
+    
+    func startTimerCycle() {
         if !countdownTimerDidStart{
             countdownTimer.start()
             progressBar.start()
             countdownTimerDidStart = true
             startBtn.setTitle("PAUSE",for: .normal)
-            
         }else{
             countdownTimer.pause()
             progressBar.pause()
@@ -216,48 +190,39 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             startBtn.setTitle("RESUME",for: .normal)
         }
     }
+    @IBAction func skipCycle(_ sender: UIButton) {
+        countdownTimer.stop()
+        countdownTimerDone()
+    }
     
     @IBAction func stopTimer(_ sender: UIButton) {
         countdownTimer.stop()
         progressBar.stop()
         countdownTimerDidStart = false
+        isTimeForBreak = false
+        cycleCountLabel.isHidden = true
+        pomoCycleCounter = 0
         stopBtn.isEnabled = false
-        stopBtn.alpha = 0.5
+        nextBtn.isEnabled = false
         startBtn.setTitle("START",for: .normal)
-        print(selectedTask?.workedHours)
+        countdownTimer.setTimer(hours: 0, minutes: 25, seconds: 0)
+        progressBar.setProgressBar(hours: 0, minutes: 25, seconds: 0)
+        print(selectedTask?.workedHours ?? 0)
     }
     
-
-        @objc func pauseWhenBackground(noti: Notification) {
-            if countdownTimerDidStart {
-                print("hthz")
-                let shared = UserDefaults.standard
-                shared.set(Date(), forKey: "savedTime")
-            }
+    @objc func pauseWhenBackground(noti: Notification) {
+        if countdownTimerDidStart {
+            print("hthz")
+            let shared = UserDefaults.standard
+            shared.set(Date(), forKey: "savedTime")
         }
-        
-        @objc func willEnterForeground(noti: Notification) {
-            if countdownTimerDidStart {
-                print("ffh")
-                countdownTimer.resumeFromBackground()
-            }
+    }
+    
+    @objc func willEnterForeground(noti: Notification) {
+        if countdownTimerDidStart {
+            print("ffh")
+            countdownTimer.resumeFromBackground()
         }
-        
-//    @IBAction func showTasks(_ sender: UIButton) {
-//        let viewController = storyboard?.instantiateViewController(identifier: "TaskPickerViewController") as! TaskPickerViewController
-//        viewController.modalPresentationStyle = .custom
-//        viewController.transitioningDelegate = self
-//        self.present(viewController, animated: true)
-//    }
-//
-//    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-//        return DrawerPresentationController(presentedViewController: presented, presenting: presenting, blurEffectStyle: .dark)
-//    }
+    }
+    
 }
-
-//
-//extension PomoViewController: DrawerPresentationControllerDelegate {
-//    func drawerMovedTo(positio""n: DraweSnapPoint) {
-//
-//    }
-//}
