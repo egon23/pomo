@@ -93,18 +93,20 @@ class CountdownTimer {
         }
     }
     
-    func resumeFromBackground() {
+    func resumeFromBackground() -> Double {
         if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
-            (diffHrs, diffMins, diffSecs) = CountdownTimer.getTimeDifference(startDate: savedDate)
-            duration -= Double(diffSecs + (diffHrs * 3600) + (diffMins * 60))
+            let timeInBackground = CountdownTimer.getTimeDifference(startDate: savedDate)
+            duration -= timeInBackground
             delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
+            return timeInBackground
         }
+        return 0
     }
     
-    static func getTimeDifference(startDate: Date) -> (Int, Int, Int) {
+    static func getTimeDifference(startDate: Date) -> Double {
        let calendar = Calendar.current
        let components = calendar.dateComponents([.hour, .minute, .second], from: startDate, to: Date())
-       return(components.hour!, components.minute!, components.second!)
+       return Double((components.hour! * 3600) + (components.minute! * 60) + components.second!)
     }
     
     

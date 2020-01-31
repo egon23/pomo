@@ -10,10 +10,14 @@ import UIKit
 import CoreData
 
 class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+    enum timerStates {
+        case RUNNING
+        case PAUSED
+        case STOPPED
+    }
     var countdownTimeInMinutes: Int = 1
     var pomoCycleCounter = 0
-    var countdownTimerDidStart = false
+    var countdownTimerState = timerStates.STOPPED
     var isTimeForBreak = false
     
     lazy var countdownTimer: CountdownTimer = {
@@ -127,7 +131,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     
     func countdownTimerDone() {
-        countdownTimerDidStart = false
+        countdownTimerState = timerStates.STOPPED
         stopBtn.isEnabled = false
         startBtn.setTitle("START",for: .normal)
         progressBar.stop()
@@ -155,12 +159,12 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             
     }
     
-    @IBAction func startTimer(_ sender: UIButton) {
+    fileprivate func setupCountdownTimer() {
         cycleCountLabel.isHidden = false
         stopBtn.isEnabled = true
         nextBtn.isEnabled = true
         if isTimeForBreak {
-            countdownTimeInMinutes = 1
+            countdownTimeInMinutes = 5
             cycleCountLabel.text = "Break"
             isTimeForBreak = false
             if pomoCycleCounter == 4 {
@@ -168,29 +172,32 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
                 pomoCycleCounter = 0
             }
         } else {
-            countdownTimeInMinutes = 2
+            countdownTimeInMinutes = 25
             pomoCycleCounter += 1
             cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
             isTimeForBreak = true
         }
         countdownTimer.setTimer(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
         progressBar.setProgressBar(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
-        startTimerCycle()
     }
     
-    func startTimerCycle() {
-        if !countdownTimerDidStart{
-            countdownTimer.start()
-            progressBar.start()
-            countdownTimerDidStart = true
-            startBtn.setTitle("PAUSE",for: .normal)
-        }else{
+    @IBAction func startTimer(_ sender: UIButton) {
+        if countdownTimerState == timerStates.RUNNING {
             countdownTimer.pause()
             progressBar.pause()
-            countdownTimerDidStart = false
+            countdownTimerState = timerStates.PAUSED
             startBtn.setTitle("RESUME",for: .normal)
+        } else {
+            if countdownTimerState == timerStates.STOPPED {
+                setupCountdownTimer()
+            }
+            countdownTimer.start()
+            progressBar.start()
+            countdownTimerState = timerStates.RUNNING
+            startBtn.setTitle("PAUSE",for: .normal)
         }
     }
+    
     @IBAction func skipCycle(_ sender: UIButton) {
         countdownTimer.stop()
         countdownTimerDone()
@@ -199,7 +206,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     @IBAction func stopTimer(_ sender: UIButton) {
         countdownTimer.stop()
         progressBar.stop()
-        countdownTimerDidStart = false
+        countdownTimerState = timerStates.STOPPED
         isTimeForBreak = false
         cycleCountLabel.isHidden = true
         pomoCycleCounter = 0
@@ -212,7 +219,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     }
     
     @objc func pauseWhenBackground(noti: Notification) {
-        if countdownTimerDidStart {
+        if countdownTimerState == timerStates.RUNNING {
             print("hthz")
             let shared = UserDefaults.standard
             shared.set(Date(), forKey: "savedTime")
@@ -220,9 +227,12 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     }
     
     @objc func willEnterForeground(noti: Notification) {
-        if countdownTimerDidStart {
+        if countdownTimerState == timerStates.RUNNING {
             print("ffh")
-            countdownTimer.resumeFromBackground()
+            let timeInBackground = countdownTimer.resumeFromBackground()
+            if isTimeForBreak { // pomodoro is not in break mode
+                selectedTask?.workedHours += timeInBackground
+            }
         }
     }
     
