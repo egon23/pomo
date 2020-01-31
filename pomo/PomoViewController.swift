@@ -118,10 +118,11 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     //MARK: - Countdown Timer Delegate
     
     func countdownTime(time: (hours: String, minutes: String, seconds: String)) {
-    
         minutes.text = time.minutes
         seconds.text = time.seconds
-        selectedTask?.workedHours += 0.01
+        if isTimeForBreak { // pomodoro is not in break mode
+            selectedTask?.workedHours += 0.01
+        }
     }
     
     
@@ -159,7 +160,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         stopBtn.isEnabled = true
         nextBtn.isEnabled = true
         if isTimeForBreak {
-            countdownTimeInMinutes = 5
+            countdownTimeInMinutes = 1
             cycleCountLabel.text = "Break"
             isTimeForBreak = false
             if pomoCycleCounter == 4 {
@@ -167,7 +168,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
                 pomoCycleCounter = 0
             }
         } else {
-            countdownTimeInMinutes = 25
+            countdownTimeInMinutes = 2
             pomoCycleCounter += 1
             cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
             isTimeForBreak = true

@@ -46,18 +46,20 @@ class TasksSettingsViewController: UITableViewController {
         
         
         cell.titleLabel.text = tasks[indexPath.row].name
-        if tasks[indexPath.row].workedHours <= 60 {
+        let secs = lrint(tasks[indexPath.row].workedHours)
+                
+        if secs < 60 {
             cell.timeLabel.text = "<0min"
         }
-        else if tasks[indexPath.row].workedHours <= 3600 {
-             cell.timeLabel.text = "\(Int(tasks[indexPath.row].workedHours/60))min"
+        else if secs < 3600 {
+             cell.timeLabel.text = "\(secs/60)min"
         } else {
-            cell.timeLabel.text = "\(Int(tasks[indexPath.row].workedHours/3600))h \(Int(tasks[indexPath.row].workedHours/60))min"
+            cell.timeLabel.text = "\(secs/3600)h \((secs % 3600)/60)min"
         }
         
         cell.goalLabel.text = "\(Int(tasks[indexPath.row].estimatedHours))h"
         
-        let progress = Int(tasks[indexPath.row].workedHours/3600/tasks[indexPath.row].estimatedHours*100)
+        let progress = lrint(Double(secs)/(tasks[indexPath.row].estimatedHours*3600)*100)
         cell.progressLabel.text = "\(progress)%"
         
         cell.titleLabel.sizeToFit()
