@@ -79,7 +79,6 @@ class TasksSettingsViewController: UITableViewController {
     
     @IBAction func didUnwind(_ sender: UIStoryboardSegue){
         guard let vc = sender.source as? AddTaskViewController else {return}
-        let task1: Taskk = Taskk(name: vc.titelTextField.text ?? "", estimatedHours: Float(vc.hoursTextField.text ?? "")!)
         let task: Task = Task(context: UIApplication.appDelegate.managedContext!)
         task.name = vc.titelTextField.text ?? "New Task"
         task.estimatedHours = Double(vc.hoursTextField.text ?? "")!

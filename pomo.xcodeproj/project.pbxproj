@@ -14,7 +14,7 @@
 		7A08029223E3648F00FC4C08 /* roundbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08029023E3648F00FC4C08 /* roundbutton.swift */; };
 		7AE6499623E091A600035262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499523E091A600035262 /* AppDelegate.swift */; };
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
-		7AE6499A23E091A600035262 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* FirstViewController.swift */; };
+		7AE6499A23E091A600035262 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* StatisticsViewController.swift */; };
 		7AE6499C23E091A600035262 /* PomoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499B23E091A600035262 /* PomoViewController.swift */; };
 		7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649A023E091A600035262 /* pomo.xcdatamodeld */; };
 		7AE649A423E091A700035262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE649A323E091A700035262 /* Assets.xcassets */; };
@@ -56,7 +56,7 @@
 		7AE6499223E091A600035262 /* pomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE6499523E091A600035262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE6499723E091A600035262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7AE6499923E091A600035262 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		7AE6499923E091A600035262 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		7AE6499B23E091A600035262 /* PomoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoViewController.swift; sourceTree = "<group>"; };
 		7AE649A123E091A600035262 /* pomo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pomo.xcdatamodel; sourceTree = "<group>"; };
 		7AE649A323E091A700035262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,12 +148,12 @@
 				7A08028E23E3644600FC4C08 /* Button_Label_Round */,
 				F8E307A423E2078300EFE453 /* Main.storyboard */,
 				7AE6499523E091A600035262 /* AppDelegate.swift */,
-				7AE6499723E091A600035262 /* SceneDelegate.swift */,
 				7AE6499B23E091A600035262 /* PomoViewController.swift */,
+				7AE6499723E091A600035262 /* SceneDelegate.swift */,
 				7AE649C023E0A5AD00035262 /* ProgressBar.swift */,
 				7AE649BE23E0A50B00035262 /* CustomColor.swift */,
 				7AE649A323E091A700035262 /* Assets.xcassets */,
-				7AE6499923E091A600035262 /* FirstViewController.swift */,
+				7AE6499923E091A600035262 /* StatisticsViewController.swift */,
 				7AE649A523E091A700035262 /* LaunchScreen.storyboard */,
 				7AE649A823E091A700035262 /* Info.plist */,
 				7AE649A023E091A600035262 /* pomo.xcdatamodeld */,
@@ -370,7 +370,7 @@
 				F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */,
 				7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */,
 				7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */,
-				7AE6499A23E091A600035262 /* FirstViewController.swift in Sources */,
+				7AE6499A23E091A600035262 /* StatisticsViewController.swift in Sources */,
 				7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */,
 				F8E3079F23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift in Sources */,
 				7AE6499623E091A600035262 /* AppDelegate.swift in Sources */,
@@ -539,14 +539,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9R3T4GU5H;
+				DEVELOPMENT_TEAM = FZ9J437R93;
 				INFOPLIST_FILE = pomo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = roli;
+				PRODUCT_BUNDLE_IDENTIFIER = egon97;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -559,14 +559,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9R3T4GU5H;
+				DEVELOPMENT_TEAM = FZ9J437R93;
 				INFOPLIST_FILE = pomo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = roli;
+				PRODUCT_BUNDLE_IDENTIFIER = egon97;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -19,14 +19,14 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     var pomoCycleCounter = 0
     var countdownTimerState = timerStates.STOPPED
     var isTimeForBreak = false
+    var day: Day?
+    var tasks: [Task] = []
+    var selectedTask: Task?
     
     lazy var countdownTimer: CountdownTimer = {
         let countdownTimer = CountdownTimer()
         return countdownTimer
     }()
-    
-    var tasks: [Task] = []
-    public var selectedTask: Task?
     
     @IBOutlet weak var progressBar: ProgressBar!
     @IBOutlet weak var minutes: UILabel!
@@ -41,6 +41,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCurrentDay()
         myPicker = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
         myPicker.delegate = self
         myPicker.dataSource = self
@@ -52,10 +53,25 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Task")) as! [Task]
-        
         self.tasks = data
     }
 
+    func setCurrentDay() {
+        var data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Day")) as! [Day]
+        data.sort{ $0.date?.compare($1.date!) == .orderedDescending}
+
+        if data.count > 0 && Calendar.current.isDateInToday(data[0].date!) {
+            day = data[0]
+            print((day?.date!.description)! + "  " + (day?.workedHoursInSeconds.description)!)
+        } else {
+            day = Day(context: UIApplication.appDelegate.managedContext!)
+            day?.date = Date()
+            day?.workedHoursInSeconds = 0.0
+            day?.breakMinutesInSeconds = 0.0
+            UIApplication.appDelegate.saveContext()
+        }
+    }
+    
     // MARK: - PickerView for Tasks
     var myPicker: UIPickerView! = UIPickerView()
     @IBAction func changeTask(_ sender: Any) {
@@ -124,9 +140,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     func countdownTime(time: (hours: String, minutes: String, seconds: String)) {
         minutes.text = time.minutes
         seconds.text = time.seconds
-        if isTimeForBreak { // pomodoro is not in break mode
-            selectedTask?.workedHours += 0.01
-        }
+        updateData(sec: 0.01)
     }
     
     
@@ -136,27 +150,18 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         startBtn.setTitle("START",for: .normal)
         progressBar.stop()
         countdownTimer.removeSavedDate()
-        
-        updateData()
         print("countdownTimerDone")
         startTimer(startBtn)
     }
     
-    func updateData() {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", selectedTask!.name!)
-        
-        do {
-            let test = try UIApplication.appDelegate.managedContext?.fetch(fetchRequest)
-            
-            let objectUpdate = test?[0] as! Task
-            objectUpdate.workedHours = selectedTask!.workedHours
-            print(objectUpdate.workedHours)
-            UIApplication.appDelegate.saveContext()
-        } catch {
-            print(error)
+    func updateData(sec: Double) {
+        if isTimeForBreak { // pomodoro is not in break mode
+            selectedTask?.workedHours += sec
+            day?.workedHoursInSeconds += sec
+        } else {
+            day?.breakMinutesInSeconds += sec
         }
-            
+        UIApplication.appDelegate.saveContext()
     }
     
     fileprivate func setupCountdownTimer() {
@@ -179,6 +184,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
         countdownTimer.setTimer(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
         progressBar.setProgressBar(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
+        if !(day?.tasks?.contains(selectedTask!))! {
+            day?.addToTasks(selectedTask!)
+        }
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
@@ -230,9 +238,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         if countdownTimerState == timerStates.RUNNING {
             print("ffh")
             let timeInBackground = countdownTimer.resumeFromBackground()
-            if isTimeForBreak { // pomodoro is not in break mode
-                selectedTask?.workedHours += timeInBackground
-            }
+            updateData(sec: timeInBackground)
         }
     }
     

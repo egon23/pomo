@@ -6,24 +6,6 @@
 //  Copyright © 2020 Egon Manya. All rights reserved.
 //
 
-struct Taskk{
-    
-    var name: String
-    var estimatedHours: Float
-    var date: String
-    var hoursWorked: Float
-    
-    init(name: String, estimatedHours: Float) {
-        self.name = name
-        self.estimatedHours = estimatedHours
-        date = "01.01.20"
-        hoursWorked = 0
-    }
-}
-
-protocol AddTaskDelegate {
-    func addTask(task: Taskk)
-}
 
 import UIKit
 
@@ -34,9 +16,7 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     
     var vc: TasksSettingsViewController?
-    
-    var delegate: AddTaskDelegate?
-    
+        
     @IBAction func createButtonTouched(_ sender: UIButton) {
        
     }
