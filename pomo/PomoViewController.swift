@@ -68,6 +68,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             day?.date = Date()
             day?.workedHoursInSeconds = 0.0
             day?.breakMinutesInSeconds = 0.0
+            day?.tasks = []
             UIApplication.appDelegate.saveContext()
         }
     }
@@ -113,6 +114,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         self.taskField.resignFirstResponder() // To resign the inputView on clicking done.
         selectedTask = tasks[myPicker.selectedRow(inComponent: 0)]
         startBtn.isEnabled = true
+        setupCountdownTimer()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -146,12 +148,13 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     func countdownTimerDone() {
         countdownTimerState = timerStates.STOPPED
+        setupCountdownTimer()
         stopBtn.isEnabled = false
         startBtn.setTitle("START",for: .normal)
         progressBar.stop()
         countdownTimer.removeSavedDate()
         print("countdownTimerDone")
-        startTimer(startBtn)
+        //startTimer(startBtn)
     }
     
     func updateData(sec: Double) {
@@ -166,10 +169,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     fileprivate func setupCountdownTimer() {
         cycleCountLabel.isHidden = false
-        stopBtn.isEnabled = true
-        nextBtn.isEnabled = true
         if isTimeForBreak {
-            countdownTimeInMinutes = 5
+            countdownTimeInMinutes = 1
             cycleCountLabel.text = "Break"
             isTimeForBreak = false
             if pomoCycleCounter == 4 {
@@ -177,38 +178,40 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
                 pomoCycleCounter = 0
             }
         } else {
-            countdownTimeInMinutes = 25
+            countdownTimeInMinutes = 1
             pomoCycleCounter += 1
             cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
             isTimeForBreak = true
         }
-        countdownTimer.setTimer(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
-        progressBar.setProgressBar(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
+        countdownTimer.setTimer(hours: 0, minutes: 0, seconds: 12)
+        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 12)
         if !(day?.tasks?.contains(selectedTask!))! {
             day?.addToTasks(selectedTask!)
         }
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
+        stopBtn.isEnabled = true
+        nextBtn.isEnabled = true
         if countdownTimerState == timerStates.RUNNING {
             countdownTimer.pause()
             progressBar.pause()
             countdownTimerState = timerStates.PAUSED
             startBtn.setTitle("RESUME",for: .normal)
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
         } else {
-            if countdownTimerState == timerStates.STOPPED {
-                setupCountdownTimer()
-            }
             countdownTimer.start()
             progressBar.start()
             countdownTimerState = timerStates.RUNNING
             startBtn.setTitle("PAUSE",for: .normal)
+            setNotification(notificationType: cycleCountLabel.text!)
         }
     }
     
     @IBAction func skipCycle(_ sender: UIButton) {
         countdownTimer.stop()
         countdownTimerDone()
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
     }
     
     @IBAction func stopTimer(_ sender: UIButton) {
@@ -216,13 +219,12 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         progressBar.stop()
         countdownTimerState = timerStates.STOPPED
         isTimeForBreak = false
-        cycleCountLabel.isHidden = true
         pomoCycleCounter = 0
         stopBtn.isEnabled = false
         nextBtn.isEnabled = false
         startBtn.setTitle("START",for: .normal)
-        countdownTimer.setTimer(hours: 0, minutes: 25, seconds: 0)
-        progressBar.setProgressBar(hours: 0, minutes: 25, seconds: 0)
+        setupCountdownTimer()
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
         print(selectedTask?.workedHours ?? 0)
     }
     
@@ -242,4 +244,23 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    func setNotification(notificationType: String) {
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = notificationType + " finished"
+        let next = (notificationType.contains("Break")) ? "next Pomodoro" : "Break"
+        content.body = "Tap here to start " + next
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: countdownTimer.getDuratiion(), repeats: false)
+        let request = UNNotificationRequest(identifier: "timmerDone", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
+        }
+    }
 }

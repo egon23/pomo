@@ -56,6 +56,9 @@ class CountdownTimer {
         delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
     }
     
+    public func getDuratiion() -> Double {
+        return duration
+    }
     
     fileprivate func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
