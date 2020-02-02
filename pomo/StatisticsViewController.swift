@@ -54,14 +54,14 @@ class StatisticsViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             cell.activeLabel.text = "\(secs/3600)h \((secs % 3600)/60)min"
         }
-        cell.breakLabel.text = "\(days[indexPath.row].breakMinutesInSeconds/60)min"
+        cell.breakLabel.text = "\(lrint(days[indexPath.row].breakMinutesInSeconds/60))min"
         if let tasks = days[indexPath.row].tasks?.allObjects as? [Task] {
             cell.tasksLabel.text = tasks.first?.name
         } else {
             cell.tasksLabel.text = ""
         }
         
-        cell.sessionLabel.text = Int(days[indexPath.row].workedHoursInSeconds/(25*60)).description
+        cell.sessionLabel.text = Int(days[indexPath.row].workedHoursInSeconds/(12)).description
         return cell
     }
     
