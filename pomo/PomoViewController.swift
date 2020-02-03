@@ -15,7 +15,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         case PAUSED
         case STOPPED
     }
-    var countdownTimeInMinutes: Int = 1
+    var pomoTimeInMinutes: Int = 25
+    var shortBreakTimeInMinutes: Int = 5
+    var longBreakTimeInMinutes: Int = 20
     var pomoCycleCounter = 0
     var countdownTimerState = timerStates.STOPPED
     var isTimeForBreak = false
@@ -54,6 +56,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         super.viewWillAppear(animated)
         let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Task")) as! [Task]
         self.tasks = data
+        pomoTimeInMinutes = UserDefaults.standard.object(forKey: "pomoLength") as? Int ?? 25
+        shortBreakTimeInMinutes = UserDefaults.standard.object(forKey: "shortBreakLength") as? Int ?? 5
+        longBreakTimeInMinutes = UserDefaults.standard.object(forKey: "longBreakLength") as? Int ?? 20
     }
 
     func setCurrentDay() {
@@ -169,22 +174,22 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     fileprivate func setupCountdownTimer() {
         cycleCountLabel.isHidden = false
+        var timeInMinutes = pomoTimeInMinutes
         if isTimeForBreak {
-            countdownTimeInMinutes = 1
+            timeInMinutes = shortBreakTimeInMinutes
             cycleCountLabel.text = "Break"
             isTimeForBreak = false
             if pomoCycleCounter == 4 {
-                countdownTimeInMinutes = 15
+                timeInMinutes = longBreakTimeInMinutes
                 pomoCycleCounter = 0
             }
         } else {
-            countdownTimeInMinutes = 1
             pomoCycleCounter += 1
             cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
             isTimeForBreak = true
         }
-        countdownTimer.setTimer(hours: 0, minutes: 0, seconds: 12)
-        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 12)
+        countdownTimer.setTimer(hours: 0, minutes: timeInMinutes, seconds: 0)
+        progressBar.setProgressBar(hours: 0, minutes: timeInMinutes, seconds: 0)
         if !(day?.tasks?.contains(selectedTask!))! {
             day?.addToTasks(selectedTask!)
         }

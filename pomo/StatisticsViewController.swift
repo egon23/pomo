@@ -60,8 +60,8 @@ class StatisticsViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             cell.tasksLabel.text = ""
         }
-        
-        cell.sessionLabel.text = Int(days[indexPath.row].workedHoursInSeconds/(12)).description
+        let pomoTimeInMinutes = UserDefaults.standard.object(forKey: "pomoLength") as? Int ?? 25
+        cell.sessionLabel.text = Int(days[indexPath.row].workedHoursInSeconds/Double(pomoTimeInMinutes*60)).description
         return cell
     }
     
