@@ -170,21 +170,21 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     fileprivate func setupCountdownTimer() {
         cycleCountLabel.isHidden = false
         if isTimeForBreak {
-            countdownTimeInMinutes = 1
+            countdownTimeInMinutes = 5
             cycleCountLabel.text = "Break"
             isTimeForBreak = false
             if pomoCycleCounter == 4 {
-                countdownTimeInMinutes = 15
+                countdownTimeInMinutes = 20
                 pomoCycleCounter = 0
             }
         } else {
-            countdownTimeInMinutes = 1
+            countdownTimeInMinutes = 25
             pomoCycleCounter += 1
             cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
             isTimeForBreak = true
         }
-        countdownTimer.setTimer(hours: 0, minutes: 0, seconds: 12)
-        progressBar.setProgressBar(hours: 0, minutes: 0, seconds: 12)
+        countdownTimer.setTimer(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
+        progressBar.setProgressBar(hours: 0, minutes: countdownTimeInMinutes, seconds: 0)
         if !(day?.tasks?.contains(selectedTask!))! {
             day?.addToTasks(selectedTask!)
         }

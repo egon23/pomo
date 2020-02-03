@@ -22,6 +22,16 @@
 		7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649BE23E0A50B00035262 /* CustomColor.swift */; };
 		7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C023E0A5AD00035262 /* ProgressBar.swift */; };
 		7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C423E0B5C900035262 /* CountdownTimer.swift */; };
+		F85EE1E823E8784B00AC81C9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85EE1E723E8784B00AC81C9 /* CloudKit.framework */; };
+		F85EE1F323E88B1300AC81C9 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1EF23E88AE800AC81C9 /* Gotham-Book.otf */; };
+		F85EE1F423E88B1800AC81C9 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1F123E88AE900AC81C9 /* Gotham-Light.otf */; };
+		F85EE1F523E88B1C00AC81C9 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1EB23E88AE800AC81C9 /* Gotham-Medium.otf */; };
+		F85EE1F623E88B2000AC81C9 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1EA23E88AE800AC81C9 /* Gotham-Thin.otf */; };
+		F85EE1F723E88B2200AC81C9 /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1F023E88AE900AC81C9 /* Gotham-Ultra.otf */; };
+		F85EE1F823E88B2500AC81C9 /* GothamNarrow-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1ED23E88AE800AC81C9 /* GothamNarrow-Black.otf */; };
+		F85EE1F923E88B2800AC81C9 /* GothamNarrow-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1EC23E88AE800AC81C9 /* GothamNarrow-Book.otf */; };
+		F85EE1FA23E88B2B00AC81C9 /* GothamNarrow-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1EE23E88AE800AC81C9 /* GothamNarrow-Thin.otf */; };
+		F85EE1FB23E88B2D00AC81C9 /* GothamNarrow-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1F223E88AE900AC81C9 /* GothamNarrow-Ultra.otf */; };
 		F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD69DD23E1B1580013411F /* DayCell.swift */; };
 		F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079823E1C65D00EFE453 /* DayViewController.swift */; };
 		F8E3079B23E1CE6F00EFE453 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */; };
@@ -64,6 +74,16 @@
 		7AE649C023E0A5AD00035262 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		7AE649C423E0B5C900035262 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 		F805B20723E795F700AA7F4C /* pomo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pomo.entitlements; sourceTree = "<group>"; };
+		F85EE1E723E8784B00AC81C9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		F85EE1EA23E88AE800AC81C9 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Thin.otf"; path = "../../../../../Downloads/gotham_ssv/Gotham-Thin.otf"; sourceTree = "<group>"; };
+		F85EE1EB23E88AE800AC81C9 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "../../../../../Downloads/gotham_ssv/Gotham-Medium.otf"; sourceTree = "<group>"; };
+		F85EE1EC23E88AE800AC81C9 /* GothamNarrow-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Book.otf"; path = "../../../../../Downloads/gotham_ssv/GothamNarrow-Book.otf"; sourceTree = "<group>"; };
+		F85EE1ED23E88AE800AC81C9 /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Black.otf"; path = "../../../../../Downloads/gotham_ssv/GothamNarrow-Black.otf"; sourceTree = "<group>"; };
+		F85EE1EE23E88AE800AC81C9 /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Thin.otf"; path = "../../../../../Downloads/gotham_ssv/GothamNarrow-Thin.otf"; sourceTree = "<group>"; };
+		F85EE1EF23E88AE800AC81C9 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Book.otf"; path = "../../../../../Downloads/gotham_ssv/Gotham-Book.otf"; sourceTree = "<group>"; };
+		F85EE1F023E88AE900AC81C9 /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Ultra.otf"; path = "../../../../../Downloads/gotham_ssv/Gotham-Ultra.otf"; sourceTree = "<group>"; };
+		F85EE1F123E88AE900AC81C9 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Light.otf"; path = "../../../../../Downloads/gotham_ssv/Gotham-Light.otf"; sourceTree = "<group>"; };
+		F85EE1F223E88AE900AC81C9 /* GothamNarrow-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Ultra.otf"; path = "../../../../../Downloads/gotham_ssv/GothamNarrow-Ultra.otf"; sourceTree = "<group>"; };
 		F8CD69DD23E1B1580013411F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		F8E3079823E1C65D00EFE453 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85EE1E823E8784B00AC81C9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +129,7 @@
 				7AE6499423E091A600035262 /* pomo */,
 				7AE649B023E091A700035262 /* pomoTests */,
 				7AE6499323E091A600035262 /* Products */,
+				F85EE1E623E8784B00AC81C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +145,7 @@
 		7AE6499423E091A600035262 /* pomo */ = {
 			isa = PBXGroup;
 			children = (
+				F85EE1E923E88AD200AC81C9 /* Fonts */,
 				F805B20723E795F700AA7F4C /* pomo.entitlements */,
 				7A08028E23E3644600FC4C08 /* Button_Label_Round */,
 				F8E307A423E2078300EFE453 /* Main.storyboard */,
@@ -158,6 +181,30 @@
 				7AE649B323E091A700035262 /* Info.plist */,
 			);
 			path = pomoTests;
+			sourceTree = "<group>";
+		};
+		F85EE1E623E8784B00AC81C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F85EE1E723E8784B00AC81C9 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F85EE1E923E88AD200AC81C9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F85EE1EF23E88AE800AC81C9 /* Gotham-Book.otf */,
+				F85EE1F123E88AE900AC81C9 /* Gotham-Light.otf */,
+				F85EE1EB23E88AE800AC81C9 /* Gotham-Medium.otf */,
+				F85EE1EA23E88AE800AC81C9 /* Gotham-Thin.otf */,
+				F85EE1F023E88AE900AC81C9 /* Gotham-Ultra.otf */,
+				F85EE1ED23E88AE800AC81C9 /* GothamNarrow-Black.otf */,
+				F85EE1EC23E88AE800AC81C9 /* GothamNarrow-Book.otf */,
+				F85EE1EE23E88AE800AC81C9 /* GothamNarrow-Thin.otf */,
+				F85EE1F223E88AE900AC81C9 /* GothamNarrow-Ultra.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,9 +288,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85EE1FA23E88B2B00AC81C9 /* GothamNarrow-Thin.otf in Resources */,
+				F85EE1F523E88B1C00AC81C9 /* Gotham-Medium.otf in Resources */,
+				F85EE1F623E88B2000AC81C9 /* Gotham-Thin.otf in Resources */,
+				F85EE1F823E88B2500AC81C9 /* GothamNarrow-Black.otf in Resources */,
 				F8E307A623E2078300EFE453 /* Main.storyboard in Resources */,
 				7AE649A723E091A700035262 /* LaunchScreen.storyboard in Resources */,
+				F85EE1F923E88B2800AC81C9 /* GothamNarrow-Book.otf in Resources */,
+				F85EE1F723E88B2200AC81C9 /* Gotham-Ultra.otf in Resources */,
+				F85EE1F323E88B1300AC81C9 /* Gotham-Book.otf in Resources */,
 				7AE649A423E091A700035262 /* Assets.xcassets in Resources */,
+				F85EE1F423E88B1800AC81C9 /* Gotham-Light.otf in Resources */,
+				F85EE1FB23E88B2D00AC81C9 /* GothamNarrow-Ultra.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

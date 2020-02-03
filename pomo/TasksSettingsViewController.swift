@@ -13,6 +13,7 @@ class TasksSettingsViewController: UITableViewController {
 
     
     var tasks: [Task] = []
+    var empty = true
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,7 +28,8 @@ class TasksSettingsViewController: UITableViewController {
 
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Tasks"
-        print(tasks.count)
+        
+        if tasks.count > 0 {empty = false}
         
     }
 
@@ -36,47 +38,59 @@ class TasksSettingsViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
+        if empty {return 1}
+        
         return tasks.count
+        
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
         
-        
-        cell.titleLabel.text = tasks[indexPath.row].name
-        let secs = lrint(tasks[indexPath.row].workedHours)
-                
-        if secs < 60 {
-            cell.timeLabel.text = "<0min"
-        }
-        else if secs < 3600 {
-             cell.timeLabel.text = "\(secs/60)min"
+        if tasks.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
+            print("cell")
+            return cell
         } else {
-            cell.timeLabel.text = "\(secs/3600)h \((secs % 3600)/60)min"
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskCell
+            
+            
+            cell.titleLabel.text = tasks[indexPath.row].name
+            let secs = lrint(tasks[indexPath.row].workedHours)
+                    
+            if secs < 60 {
+                cell.timeLabel.text = "<0min"
+            }
+            else if secs < 3600 {
+                 cell.timeLabel.text = "\(secs/60)min"
+            } else {
+                cell.timeLabel.text = "\(secs/3600)h \((secs % 3600)/60)min"
+            }
+            
+            cell.goalLabel.text = "\(Int(tasks[indexPath.row].estimatedHours))h"
+            
+            let progress = lrint(Double(secs)/(tasks[indexPath.row].estimatedHours*3600)*100)
+            cell.progressLabel.text = "\(progress)%"
+            
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let formatterString = formatter.string(from: tasks[indexPath.row].deadline ?? Date())
+            let formatterDate = formatter.date(from: formatterString)
+            formatter.dateFormat = "dd MMM. yyyy"
+            
+            cell.deadlineLabel.text = formatter.string(from: formatterDate!)
+            
+            cell.deadlineLabel.sizeToFit()
+            cell.titleLabel.sizeToFit()
+            cell.progressLabel.sizeToFit()
+            cell.timeLabel.sizeToFit()
+            cell.goalLabel.sizeToFit()
+            return cell
         }
         
-        cell.goalLabel.text = "\(Int(tasks[indexPath.row].estimatedHours))h"
-        
-        let progress = lrint(Double(secs)/(tasks[indexPath.row].estimatedHours*3600)*100)
-        cell.progressLabel.text = "\(progress)%"
-        
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let formatterString = formatter.string(from: tasks[indexPath.row].deadline ?? Date())
-        let formatterDate = formatter.date(from: formatterString)
-        formatter.dateFormat = "dd MMM. yyyy"
-        
-        cell.deadlineLabel.text = formatter.string(from: formatterDate!)
-        
-        cell.deadlineLabel.sizeToFit()
-        cell.titleLabel.sizeToFit()
-        cell.progressLabel.sizeToFit()
-        cell.timeLabel.sizeToFit()
-        cell.goalLabel.sizeToFit()
-        return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -94,8 +108,22 @@ class TasksSettingsViewController: UITableViewController {
         task.estimatedHours = Double(vc.hoursTextField.text ?? "")!
         task.deadline = vc.datePicker.date
         UIApplication.appDelegate.saveContext()
+        empty = false
     }
    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let data = tasks[indexPath.row]
+            UIApplication.appDelegate.persistentContainer.viewContext.delete(data)
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            UIApplication.appDelegate.saveContext()
+            if tasks.count == 0 {
+                empty = true
+            }
+            tableView.reloadData()
+        }
+    }
     
     
     /*
