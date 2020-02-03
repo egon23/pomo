@@ -62,6 +62,16 @@ class TasksSettingsViewController: UITableViewController {
         let progress = lrint(Double(secs)/(tasks[indexPath.row].estimatedHours*3600)*100)
         cell.progressLabel.text = "\(progress)%"
         
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formatterString = formatter.string(from: tasks[indexPath.row].deadline ?? Date())
+        let formatterDate = formatter.date(from: formatterString)
+        formatter.dateFormat = "dd MMM. yyyy"
+        
+        cell.deadlineLabel.text = formatter.string(from: formatterDate!)
+        
+        cell.deadlineLabel.sizeToFit()
         cell.titleLabel.sizeToFit()
         cell.progressLabel.sizeToFit()
         cell.timeLabel.sizeToFit()
@@ -82,6 +92,7 @@ class TasksSettingsViewController: UITableViewController {
         let task: Task = Task(context: UIApplication.appDelegate.managedContext!)
         task.name = vc.titelTextField.text ?? "New Task"
         task.estimatedHours = Double(vc.hoursTextField.text ?? "")!
+        task.deadline = vc.datePicker.date
         UIApplication.appDelegate.saveContext()
     }
    

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UITableViewController {
     
     @IBOutlet weak var settingsTableView: UITableView!
     
@@ -18,36 +18,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Settings"
         
-        settingsTableView.delegate = self
-        settingsTableView.dataSource = self
+       
     }
     
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingsCell
-        
-        
-        
-        switch indexPath.row {
-        case 0: cell.settingLabel.text = "Tutorial"
-        case 1: cell.settingLabel.text = "Manage Tasks"
-        case 2: cell.settingLabel.text = "Intervals"
-        case 3: cell.settingLabel.text = "Notifications"
-        case 4: cell.settingLabel.text = "Sounds"
-        case 5: cell.settingLabel.text = "Appearance"
-        case 6: cell.settingLabel.text = "App Icon"
-        case 7: cell.settingLabel.text = "About us"
-        default:
-            cell.textLabel?.text = "?"
-        }
-        cell.settingLabel.sizeToFit()
-        
-        return cell
-    }
     /*
     // MARK: - Navigation
 

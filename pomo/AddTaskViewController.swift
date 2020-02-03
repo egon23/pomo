@@ -14,6 +14,7 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var titelTextField: UITextField!
     @IBOutlet weak var hoursTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     var vc: TasksSettingsViewController?
         

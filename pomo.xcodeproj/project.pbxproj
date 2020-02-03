@@ -63,6 +63,7 @@
 		7AE649BE23E0A50B00035262 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		7AE649C023E0A5AD00035262 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		7AE649C423E0B5C900035262 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
+		F805B20723E795F700AA7F4C /* pomo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pomo.entitlements; sourceTree = "<group>"; };
 		F8CD69DD23E1B1580013411F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		F8E3079823E1C65D00EFE453 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		7AE6499423E091A600035262 /* pomo */ = {
 			isa = PBXGroup;
 			children = (
+				F805B20723E795F700AA7F4C /* pomo.entitlements */,
 				7A08028E23E3644600FC4C08 /* Button_Label_Round */,
 				F8E307A423E2078300EFE453 /* Main.storyboard */,
 				7AE6499523E091A600035262 /* AppDelegate.swift */,
@@ -438,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pomo/pomo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9R3T4GU5H;
 				INFOPLIST_FILE = pomo/Info.plist;
@@ -457,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pomo/pomo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9R3T4GU5H;
 				INFOPLIST_FILE = pomo/Info.plist;
