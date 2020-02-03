@@ -184,6 +184,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
                 pomoCycleCounter = 0
             }
         } else {
+            countdownTimeInMinutes = 25
             pomoCycleCounter += 1
             cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
             isTimeForBreak = true

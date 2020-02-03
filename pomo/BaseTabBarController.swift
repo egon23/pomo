@@ -18,7 +18,11 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         overrideUserInterfaceStyle = .dark
         delegate = self
         selectedIndex = defaultIndex
+        tabBar.items?[1].image = UIImage(systemName: "clock")
     }
+    
+    
+    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         if let fromView = tabBarController.selectedViewController?.view,
