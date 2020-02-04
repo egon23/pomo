@@ -20,6 +20,7 @@ class TasksSettingsViewController: UITableViewController {
         let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Task")) as! [Task]
         
         self.tasks = data
+        if tasks.count > 0 {empty = false}
         tableView.reloadData()
     }
     
@@ -29,7 +30,7 @@ class TasksSettingsViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Tasks"
         
-        if tasks.count > 0 {empty = false}
+        
         
     }
 

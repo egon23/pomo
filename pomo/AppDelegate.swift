@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 
+
 extension UIApplication {
     
     static var appDelegate: AppDelegate {
@@ -21,22 +22,15 @@ extension UIApplication {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
+
     
     let notificationCenter = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        notificationCenter.delegate = self
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        
-        notificationCenter.requestAuthorization(options: options) {
-            (didAllow, error) in
-            if !didAllow {
-                print("User has declined notifications")
-            }
-        }
         
         
+       
         return true
     }
 
