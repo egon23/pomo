@@ -10,6 +10,15 @@
 		7A08025323E1FA7C00FC4C08 /* TaskPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */; };
 		7A08029123E3648F00FC4C08 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08028F23E3648F00FC4C08 /* RoundLabel.swift */; };
 		7A08029223E3648F00FC4C08 /* roundbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08029023E3648F00FC4C08 /* roundbutton.swift */; };
+		7A804D1623E8ACE200D160D6 /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D0D23E8ACE200D160D6 /* Gotham-Ultra.otf */; };
+		7A804D1723E8ACE200D160D6 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D0E23E8ACE200D160D6 /* Gotham-Medium.otf */; };
+		7A804D1823E8ACE200D160D6 /* GothamNarrow-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D0F23E8ACE200D160D6 /* GothamNarrow-Book.otf */; };
+		7A804D1923E8ACE200D160D6 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1023E8ACE200D160D6 /* Gotham-Thin.otf */; };
+		7A804D1A23E8ACE200D160D6 /* GothamNarrow-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1123E8ACE200D160D6 /* GothamNarrow-Thin.otf */; };
+		7A804D1B23E8ACE200D160D6 /* GothamNarrow-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1223E8ACE200D160D6 /* GothamNarrow-Ultra.otf */; };
+		7A804D1C23E8ACE200D160D6 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1323E8ACE200D160D6 /* Gotham-Book.otf */; };
+		7A804D1D23E8ACE200D160D6 /* GothamNarrow-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1423E8ACE200D160D6 /* GothamNarrow-Black.otf */; };
+		7A804D1E23E8ACE200D160D6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1523E8ACE200D160D6 /* Gotham-Light.otf */; };
 		7AE6499623E091A600035262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499523E091A600035262 /* AppDelegate.swift */; };
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
 		7AE6499A23E091A600035262 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* StatisticsViewController.swift */; };
@@ -61,6 +70,15 @@
 		7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPickerViewController.swift; sourceTree = "<group>"; };
 		7A08028F23E3648F00FC4C08 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		7A08029023E3648F00FC4C08 /* roundbutton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundbutton.swift; sourceTree = "<group>"; };
+		7A804D0D23E8ACE200D160D6 /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Ultra.otf"; sourceTree = "<group>"; };
+		7A804D0E23E8ACE200D160D6 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		7A804D0F23E8ACE200D160D6 /* GothamNarrow-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Book.otf"; sourceTree = "<group>"; };
+		7A804D1023E8ACE200D160D6 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
+		7A804D1123E8ACE200D160D6 /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Thin.otf"; sourceTree = "<group>"; };
+		7A804D1223E8ACE200D160D6 /* GothamNarrow-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Ultra.otf"; sourceTree = "<group>"; };
+		7A804D1323E8ACE200D160D6 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		7A804D1423E8ACE200D160D6 /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Black.otf"; sourceTree = "<group>"; };
+		7A804D1523E8ACE200D160D6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
 		7AE6499223E091A600035262 /* pomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE6499523E091A600035262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE6499723E091A600035262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +147,22 @@
 				7A08028F23E3648F00FC4C08 /* RoundLabel.swift */,
 			);
 			path = Button_Label_Round;
+			sourceTree = "<group>";
+		};
+		7A804D0C23E8ABC000D160D6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7A804D1323E8ACE200D160D6 /* Gotham-Book.otf */,
+				7A804D1523E8ACE200D160D6 /* Gotham-Light.otf */,
+				7A804D0E23E8ACE200D160D6 /* Gotham-Medium.otf */,
+				7A804D1023E8ACE200D160D6 /* Gotham-Thin.otf */,
+				7A804D0D23E8ACE200D160D6 /* Gotham-Ultra.otf */,
+				7A804D1423E8ACE200D160D6 /* GothamNarrow-Black.otf */,
+				7A804D0F23E8ACE200D160D6 /* GothamNarrow-Book.otf */,
+				7A804D1123E8ACE200D160D6 /* GothamNarrow-Thin.otf */,
+				7A804D1223E8ACE200D160D6 /* GothamNarrow-Ultra.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		7AE6498923E091A600035262 = {
@@ -201,22 +235,6 @@
 				F85EE1E723E8784B00AC81C9 /* CloudKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F85EE1E923E88AD200AC81C9 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F85EE1EF23E88AE800AC81C9 /* Gotham-Book.otf */,
-				F85EE1F123E88AE900AC81C9 /* Gotham-Light.otf */,
-				F85EE1EB23E88AE800AC81C9 /* Gotham-Medium.otf */,
-				F85EE1EA23E88AE800AC81C9 /* Gotham-Thin.otf */,
-				F85EE1F023E88AE900AC81C9 /* Gotham-Ultra.otf */,
-				F85EE1ED23E88AE800AC81C9 /* GothamNarrow-Black.otf */,
-				F85EE1EC23E88AE800AC81C9 /* GothamNarrow-Book.otf */,
-				F85EE1EE23E88AE800AC81C9 /* GothamNarrow-Thin.otf */,
-				F85EE1F223E88AE900AC81C9 /* GothamNarrow-Ultra.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,12 +325,12 @@
 				F85EE1F823E88B2500AC81C9 /* GothamNarrow-Black.otf in Resources */,
 				F8E307A623E2078300EFE453 /* Main.storyboard in Resources */,
 				7AE649A723E091A700035262 /* LaunchScreen.storyboard in Resources */,
-				F85EE1F923E88B2800AC81C9 /* GothamNarrow-Book.otf in Resources */,
-				F85EE1F723E88B2200AC81C9 /* Gotham-Ultra.otf in Resources */,
-				F85EE1F323E88B1300AC81C9 /* Gotham-Book.otf in Resources */,
 				7AE649A423E091A700035262 /* Assets.xcassets in Resources */,
-				F85EE1F423E88B1800AC81C9 /* Gotham-Light.otf in Resources */,
-				F85EE1FB23E88B2D00AC81C9 /* GothamNarrow-Ultra.otf in Resources */,
+				7A804D1A23E8ACE200D160D6 /* GothamNarrow-Thin.otf in Resources */,
+				7A804D1E23E8ACE200D160D6 /* Gotham-Light.otf in Resources */,
+				7A804D1723E8ACE200D160D6 /* Gotham-Medium.otf in Resources */,
+				7A804D1823E8ACE200D160D6 /* GothamNarrow-Book.otf in Resources */,
+				7A804D1D23E8ACE200D160D6 /* GothamNarrow-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

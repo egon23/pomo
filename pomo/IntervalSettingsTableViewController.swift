@@ -27,6 +27,13 @@ class IntervalSettingsTableViewController: UITableViewController, UIPickerViewDe
         navigationItem.title = "Intervals"
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pomoLengthText.text = (UserDefaults.standard.object(forKey: "pomoLength") as? Int ?? 25).description + " Minutes"
+        shortBreakText.text = (UserDefaults.standard.object(forKey: "shortBreakLength") as? Int ?? 5).description + " Minutes"
+        longBreakText.text = (UserDefaults.standard.object(forKey: "longBreakLength") as? Int ?? 20).description + " Minutes"
+    }
+    
     @IBAction func editTime(_ sender: UITextField) {
         sender.becomeFirstResponder()
     }
