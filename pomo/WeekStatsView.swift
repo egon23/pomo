@@ -28,6 +28,7 @@ open class WeekStatsView: MacawView {
     private var mainGroup = Group()
     private var captionsGroup = Group()
     private var maxLimit = 1
+    private var currDay = 0
     private var barAnimations = [Animation]()
     private var barsValues = [0, 0, 0, 0, 0, 0, 0]
     private let barsCaptions = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
@@ -40,10 +41,11 @@ open class WeekStatsView: MacawView {
     private let gradientColor = LinearGradient(degree: 90, from: Color(val: 0x00ff00), to: Color(val: 0x00adff))
     
     public func setBarsValues(values: [Day]) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "EE" // "EE" to get short style
+        currDay = barsCaptions.firstIndex(of: dateFormatter.string(from: Date()).uppercased())!
         for day in values {
             if abs((day.date?.compare(with: Date(), only: .day))!) <= 7 {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat  = "EE" // "EE" to get short style
                 let idx = barsCaptions.firstIndex(of: dateFormatter.string(from: day.date!).uppercased())!
                 barsValues[idx] = Int(day.workedHoursInSeconds)
             }
@@ -104,10 +106,13 @@ open class WeekStatsView: MacawView {
         for barIndex in 0...barsCount - 1 {
             let text = Text(
                 text: barsCaptions[barIndex],
-                font: Font(name: "Gotham", size: 14),
+                font: Font(name: "Gotham-Book", size: 14),
                 fill: Color(val: 0xFFFFFF)
             )
             text.align = .mid
+            if barIndex == currDay {
+                text.fill = Color(val: 0x00ff00)
+            }
             text.place = .move(
                 dx: Double((barIndex * (barWidth + barsSpacing)) + barWidth / 2),
                 dy: 0
