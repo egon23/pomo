@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		7A804D1C23E8ACE200D160D6 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1323E8ACE200D160D6 /* Gotham-Book.otf */; };
 		7A804D1D23E8ACE200D160D6 /* GothamNarrow-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1423E8ACE200D160D6 /* GothamNarrow-Black.otf */; };
 		7A804D1E23E8ACE200D160D6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1523E8ACE200D160D6 /* Gotham-Light.otf */; };
+		7A804D2023E9E25600D160D6 /* WeekStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */; };
 		7AE6499623E091A600035262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499523E091A600035262 /* AppDelegate.swift */; };
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
 		7AE6499A23E091A600035262 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* StatisticsViewController.swift */; };
@@ -31,6 +32,8 @@
 		7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649BE23E0A50B00035262 /* CustomColor.swift */; };
 		7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C023E0A5AD00035262 /* ProgressBar.swift */; };
 		7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C423E0B5C900035262 /* CountdownTimer.swift */; };
+		C46E6B4B3CDF6C910D8DEB1A /* Pods_pomoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3EED0857CEECA859C4A0241 /* Pods_pomoTests.framework */; };
+		DD61CDC2F0EA625556F625F5 /* Pods_pomo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE8983FA0E66E2BD5B28CC0 /* Pods_pomo.framework */; };
 		F85EE1E823E8784B00AC81C9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85EE1E723E8784B00AC81C9 /* CloudKit.framework */; };
 		F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD69DD23E1B1580013411F /* DayCell.swift */; };
 		F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079823E1C65D00EFE453 /* DayViewController.swift */; };
@@ -66,6 +69,7 @@
 		7A804D1323E8ACE200D160D6 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		7A804D1423E8ACE200D160D6 /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Black.otf"; sourceTree = "<group>"; };
 		7A804D1523E8ACE200D160D6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStatsView.swift; sourceTree = "<group>"; };
 		7AE6499223E091A600035262 /* pomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE6499523E091A600035262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE6499723E091A600035262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,11 @@
 		7AE649BE23E0A50B00035262 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		7AE649C023E0A5AD00035262 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		7AE649C423E0B5C900035262 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
+		8391444D82A44CB29E0452CF /* Pods-pomoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomoTests.release.xcconfig"; path = "Target Support Files/Pods-pomoTests/Pods-pomoTests.release.xcconfig"; sourceTree = "<group>"; };
+		87AF731DACF19667EC88B01C /* Pods-pomo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomo.debug.xcconfig"; path = "Target Support Files/Pods-pomo/Pods-pomo.debug.xcconfig"; sourceTree = "<group>"; };
+		C826D234AB3B7581218977B2 /* Pods-pomoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomoTests.debug.xcconfig"; path = "Target Support Files/Pods-pomoTests/Pods-pomoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2BA74F2A45C5FE8533B8960 /* Pods-pomo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomo.release.xcconfig"; path = "Target Support Files/Pods-pomo/Pods-pomo.release.xcconfig"; sourceTree = "<group>"; };
+		F3EED0857CEECA859C4A0241 /* Pods_pomoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pomoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F805B20723E795F700AA7F4C /* pomo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pomo.entitlements; sourceTree = "<group>"; };
 		F85EE1E723E8784B00AC81C9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F8CD69DD23E1B1580013411F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 		F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		F8E307A523E2078300EFE453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8E307A723E214EA00EFE453 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		FDE8983FA0E66E2BD5B28CC0 /* Pods_pomo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pomo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85EE1E823E8784B00AC81C9 /* CloudKit.framework in Frameworks */,
+				DD61CDC2F0EA625556F625F5 /* Pods_pomo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +119,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46E6B4B3CDF6C910D8DEB1A /* Pods_pomoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73DA23CF20B3AB9E5AFFE6B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87AF731DACF19667EC88B01C /* Pods-pomo.debug.xcconfig */,
+				D2BA74F2A45C5FE8533B8960 /* Pods-pomo.release.xcconfig */,
+				C826D234AB3B7581218977B2 /* Pods-pomoTests.debug.xcconfig */,
+				8391444D82A44CB29E0452CF /* Pods-pomoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A08028E23E3644600FC4C08 /* Button_Label_Round */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +169,7 @@
 				7AE649B023E091A700035262 /* pomoTests */,
 				7AE6499323E091A600035262 /* Products */,
 				F85EE1E623E8784B00AC81C9 /* Frameworks */,
+				73DA23CF20B3AB9E5AFFE6B1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +210,7 @@
 				F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */,
 				F8E307A723E214EA00EFE453 /* TaskCell.swift */,
 				7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */,
+				7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */,
 			);
 			path = pomo;
 			sourceTree = "<group>";
@@ -203,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				F85EE1E723E8784B00AC81C9 /* CloudKit.framework */,
+				FDE8983FA0E66E2BD5B28CC0 /* Pods_pomo.framework */,
+				F3EED0857CEECA859C4A0241 /* Pods_pomoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AE649B623E091A700035262 /* Build configuration list for PBXNativeTarget "pomo" */;
 			buildPhases = (
+				8687EB39F2FCAB7D80146D50 /* [CP] Check Pods Manifest.lock */,
 				7AE6498E23E091A600035262 /* Sources */,
 				7AE6498F23E091A600035262 /* Frameworks */,
 				7AE6499023E091A600035262 /* Resources */,
+				5D0161896DED33B5AF50682D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AE649B923E091A700035262 /* Build configuration list for PBXNativeTarget "pomoTests" */;
 			buildPhases = (
+				C459937B0DE453E03F5934E1 /* [CP] Check Pods Manifest.lock */,
 				7AE649A923E091A700035262 /* Sources */,
 				7AE649AA23E091A700035262 /* Frameworks */,
 				7AE649AB23E091A700035262 /* Resources */,
@@ -312,6 +342,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D0161896DED33B5AF50682D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pomo/Pods-pomo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pomo/Pods-pomo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pomo/Pods-pomo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8687EB39F2FCAB7D80146D50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pomo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C459937B0DE453E03F5934E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pomoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7AE6498E23E091A600035262 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -324,6 +418,7 @@
 				7A08029223E3648F00FC4C08 /* roundbutton.swift in Sources */,
 				7A08029123E3648F00FC4C08 /* RoundLabel.swift in Sources */,
 				F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */,
+				7A804D2023E9E25600D160D6 /* WeekStatsView.swift in Sources */,
 				F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */,
 				7A08025323E1FA7C00FC4C08 /* TaskPickerViewController.swift in Sources */,
 				F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */,
@@ -494,18 +589,19 @@
 		};
 		7AE649B723E091A700035262 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87AF731DACF19667EC88B01C /* Pods-pomo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = pomo/pomo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9R3T4GU5H;
+				DEVELOPMENT_TEAM = FZ9J437R93;
 				INFOPLIST_FILE = pomo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = roli;
+				PRODUCT_BUNDLE_IDENTIFIER = egon97;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,18 +610,19 @@
 		};
 		7AE649B823E091A700035262 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2BA74F2A45C5FE8533B8960 /* Pods-pomo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = pomo/pomo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9R3T4GU5H;
+				DEVELOPMENT_TEAM = FZ9J437R93;
 				INFOPLIST_FILE = pomo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = roli;
+				PRODUCT_BUNDLE_IDENTIFIER = egon97;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -534,6 +631,7 @@
 		};
 		7AE649BA23E091A700035262 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C826D234AB3B7581218977B2 /* Pods-pomoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +654,7 @@
 		};
 		7AE649BB23E091A700035262 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8391444D82A44CB29E0452CF /* Pods-pomoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

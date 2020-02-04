@@ -13,6 +13,7 @@ class StatisticsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var days: [Day] = []
     @IBOutlet weak var daysTableView: UITableView!
+    @IBOutlet weak var weekStatsView: WeekStatsView!
     
 
     override func viewDidLoad() {
@@ -28,8 +29,9 @@ class StatisticsViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Day")) as! [Day]
-        
         self.days = data
+        weekStatsView.setBarsValues(values: days)
+        weekStatsView.play()
         daysTableView.reloadData()
     }
 

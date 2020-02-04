@@ -43,7 +43,6 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCurrentDay()
         myPicker = UIPickerView(frame: CGRect(x: 0, y: 40, width: 0, height: 0))
         myPicker.delegate = self
         myPicker.dataSource = self
@@ -74,7 +73,6 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             day?.workedHoursInSeconds = 0.0
             day?.breakMinutesInSeconds = 0.0
             day?.tasks = []
-            UIApplication.appDelegate.saveContext()
         }
     }
     
@@ -119,7 +117,10 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         self.taskField.resignFirstResponder() // To resign the inputView on clicking done.
         selectedTask = tasks[myPicker.selectedRow(inComponent: 0)]
         startBtn.isEnabled = true
-        setupCountdownTimer()
+        if day == nil || !Calendar.current.isDateInToday((day?.date!)!) {
+            setCurrentDay()
+        }
+        stopTimer(stopBtn)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -196,6 +197,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
+        if day == nil || !Calendar.current.isDateInToday((day?.date!)!) {
+            setCurrentDay()
+        }
         stopBtn.isEnabled = true
         nextBtn.isEnabled = true
         if countdownTimerState == timerStates.RUNNING {

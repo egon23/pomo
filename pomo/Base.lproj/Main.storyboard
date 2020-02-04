@@ -29,19 +29,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="131.5" y="385" width="151" height="43"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usP-Q0-BdQ" customClass="WeekStatsView" customModule="pomo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="374" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="110" y="436" width="194" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Ec6-ET-MDk"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="174" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oze-9V-XTS">
-                                <rect key="frame" x="20" y="175" width="374" height="638"/>
+                                <rect key="frame" x="20" y="278" width="374" height="535"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="dayCell" rowHeight="174" id="5zR-yE-J45" customClass="DayCell" customModule="pomo" customModuleProvider="target">
@@ -142,21 +138,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="usP-Q0-BdQ" secondAttribute="trailing" constant="20" id="65f-yv-gPS"/>
                             <constraint firstItem="Oze-9V-XTS" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="9xf-aH-PNR"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="110" id="Nsn-20-sMC"/>
-                            <constraint firstItem="Oze-9V-XTS" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="87" id="Uuz-ti-IwV"/>
-                            <constraint firstItem="Oze-9V-XTS" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="VgO-bP-eCT"/>
+                            <constraint firstItem="Oze-9V-XTS" firstAttribute="top" secondItem="usP-Q0-BdQ" secondAttribute="bottom" constant="20" id="Uuz-ti-IwV"/>
                             <constraint firstItem="Oze-9V-XTS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="f2A-8x-7TL"/>
+                            <constraint firstItem="usP-Q0-BdQ" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="kBO-v5-eB9"/>
                             <constraint firstItem="Oze-9V-XTS" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="kTV-nm-Ck4"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" id="uGj-v9-eax"/>
-                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="A5M-7J-77L" secondAttribute="centerX" id="ufN-Rm-d0w"/>
-                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="wVg-FV-H6b"/>
+                            <constraint firstItem="usP-Q0-BdQ" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="qel-Qf-Clc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" id="gpC-JU-ZDZ"/>
                     <connections>
                         <outlet property="daysTableView" destination="Oze-9V-XTS" id="oEc-OS-2rk"/>
+                        <outlet property="weekStatsView" destination="usP-Q0-BdQ" id="6bV-hT-PmU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -911,7 +906,6 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25 Minutes" placeholder="pomoLength" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfi-rv-l4t">
                                                     <rect key="frame" x="297" y="11" width="97" height="22"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
