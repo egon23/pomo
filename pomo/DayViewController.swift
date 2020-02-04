@@ -32,6 +32,7 @@ class DayViewController: UIViewController {
         tasksLabel.sizeToFit()
         activeTimeLabel.sizeToFit()
         breakTimeLabel.sizeToFit()
+        dateLabel.sizeToFit()
     }
     
 
