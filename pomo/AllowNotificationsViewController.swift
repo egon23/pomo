@@ -15,7 +15,7 @@ class AllowNotificationsViewController: UIViewController, UNUserNotificationCent
     
     @IBAction func btnTouched(_ sender: Any) {
         notificationCenter.delegate = self
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        let options: UNAuthorizationOptions = [.alert, .sound]
         
         notificationCenter.requestAuthorization(options: options) {
             (didAllow, error) in

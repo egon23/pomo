@@ -27,7 +27,7 @@ open class WeekStatsView: MacawView {
     private var backgroundGroup = Group()
     private var mainGroup = Group()
     private var captionsGroup = Group()
-    private var maxLimit = 1
+    private var maxLimit = 1.0
     private var currDay = 0
     private var barAnimations = [Animation]()
     private var barsValues = [0, 0, 0, 0, 0, 0, 0]
@@ -50,7 +50,8 @@ open class WeekStatsView: MacawView {
                 barsValues[idx] = Int(day.workedHoursInSeconds)
             }
         }
-        maxLimit = lrint(values.max{ $0.workedHoursInSeconds < $1.workedHoursInSeconds }!.workedHoursInSeconds) + 60*60
+        maxLimit = values.max{ $0.workedHoursInSeconds < $1.workedHoursInSeconds }?.workedHoursInSeconds ?? 1.0
+        maxLimit += maxLimit/10
     }
     
     private func createScene() {
@@ -129,7 +130,7 @@ open class WeekStatsView: MacawView {
         barAnimations.removeAll()
         for (index, node) in mainGroup.contents.enumerated() {
             if let group = node as? Group {
-                let percent = (Double(barsValues[index])/Double(maxLimit)) * 100
+                let percent = (Double(barsValues[index])/maxLimit) * 100
                 let heightValue = self.barHeight / 100 * lrint(percent)
                 let animation = group.contentsVar.animation({ t in
                     let value = Double(heightValue) / 100 * (t * 100)

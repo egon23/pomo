@@ -9,40 +9,54 @@
 
 import UIKit
 
+
+protocol AddTaskDelegate {
+    func addTaskWillDismissed()
+    
+}
+
 class AddTaskViewController: UIViewController {
 
     @IBOutlet weak var titelTextField: UITextField!
     @IBOutlet weak var hoursTextField: UITextField!
-    @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-    var vc: TasksSettingsViewController?
-        
-    @IBAction func createButtonTouched(_ sender: UIButton) {
-       
-    }
+    @IBOutlet weak var saveBtn: UIButton!
+    var del: AddTaskDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let nav = navigationController?.navigationBar {
+            nav.prefersLargeTitles = true
+            navigationItem.title = "Create new task"
+            saveBtn.isHidden = true
+        }
 
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Create new task"
-        
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
-   
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveTaskPressed(_ sender: UIButton) {
+        saveTask()
     }
-    */
-
+    
+    @IBAction func barSaveButton(_ sender: UIBarButtonItem) {
+        saveTask()
+    }
+    
+    func saveTask() {
+        if !titelTextField.text!.isEmpty && !hoursTextField.text!.isEmpty {
+            let task: Task = Task(context: UIApplication.appDelegate.managedContext!)
+            task.name = titelTextField.text ?? "New Task"
+            task.estimatedHours = Double(hoursTextField.text ?? "0")!
+            task.deadline = datePicker.date
+            UIApplication.appDelegate.saveContext()
+            if saveBtn.isHidden {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                del?.addTaskWillDismissed()
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
 }

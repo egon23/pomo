@@ -7,18 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A08025323E1FA7C00FC4C08 /* TaskPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */; };
 		7A08029123E3648F00FC4C08 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08028F23E3648F00FC4C08 /* RoundLabel.swift */; };
 		7A08029223E3648F00FC4C08 /* roundbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08029023E3648F00FC4C08 /* roundbutton.swift */; };
-		7A804D1623E8ACE200D160D6 /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D0D23E8ACE200D160D6 /* Gotham-Ultra.otf */; };
-		7A804D1723E8ACE200D160D6 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D0E23E8ACE200D160D6 /* Gotham-Medium.otf */; };
-		7A804D1823E8ACE200D160D6 /* GothamNarrow-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D0F23E8ACE200D160D6 /* GothamNarrow-Book.otf */; };
-		7A804D1923E8ACE200D160D6 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1023E8ACE200D160D6 /* Gotham-Thin.otf */; };
-		7A804D1A23E8ACE200D160D6 /* GothamNarrow-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1123E8ACE200D160D6 /* GothamNarrow-Thin.otf */; };
-		7A804D1B23E8ACE200D160D6 /* GothamNarrow-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1223E8ACE200D160D6 /* GothamNarrow-Ultra.otf */; };
-		7A804D1C23E8ACE200D160D6 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1323E8ACE200D160D6 /* Gotham-Book.otf */; };
-		7A804D1D23E8ACE200D160D6 /* GothamNarrow-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1423E8ACE200D160D6 /* GothamNarrow-Black.otf */; };
-		7A804D1E23E8ACE200D160D6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A804D1523E8ACE200D160D6 /* Gotham-Light.otf */; };
 		7A804D2023E9E25600D160D6 /* WeekStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */; };
 		7AE6499623E091A600035262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499523E091A600035262 /* AppDelegate.swift */; };
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
@@ -70,7 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPickerViewController.swift; sourceTree = "<group>"; };
 		7A08028F23E3648F00FC4C08 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		7A08029023E3648F00FC4C08 /* roundbutton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundbutton.swift; sourceTree = "<group>"; };
 		7A804D0E23E8ACE200D160D6 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
@@ -222,7 +211,6 @@
 				F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */,
 				F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */,
 				F8E307A723E214EA00EFE453 /* TaskCell.swift */,
-				7A08025223E1FA7C00FC4C08 /* TaskPickerViewController.swift */,
 				F85EE1FE23E9D3DD00AC81C9 /* PageDataViewController.swift */,
 				F8C52E0C23E9FC9100A91054 /* AllowNotificationsViewController.swift */,
 				7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */,
@@ -470,7 +458,6 @@
 				F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */,
 				7A804D2023E9E25600D160D6 /* WeekStatsView.swift in Sources */,
 				F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */,
-				7A08025323E1FA7C00FC4C08 /* TaskPickerViewController.swift in Sources */,
 				F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */,
 				7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */,
 				7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */,

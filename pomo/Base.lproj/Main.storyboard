@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvY-wE-I33" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1362.3188405797102" y="2235.9375"/>
+            <point key="canvasLocation" x="0.0" y="1474"/>
         </scene>
         <!--Pomo View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -544,12 +544,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IrW-MY-nyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282.608695652174" y="2183.0357142857142"/>
+            <point key="canvasLocation" x="2448" y="1474"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="si9-Fn-zWz">
             <objects>
-                <viewController id="AAo-J0-f8u" customClass="AddTaskViewController" customModule="pomo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTaskViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AAo-J0-f8u" customClass="AddTaskViewController" customModule="pomo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e28-uy-G11">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,29 +591,35 @@
                                 <rect key="frame" x="20" y="389" width="374" height="124"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyl-Dm-ttG">
-                                <rect key="frame" x="46" y="529" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw9-Du-BCM">
+                                <rect key="frame" x="190" y="555" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
-                                    <segue destination="A9v-d5-Pua" kind="unwind" unwindAction="didUnwind:" id="3QR-rG-2hY"/>
+                                    <action selector="saveTaskPressed:" destination="AAo-J0-f8u" eventType="touchUpInside" id="lTs-aK-nIJ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="g0I-IN-kGx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UJu-ml-dpZ"/>
+                    <navigationItem key="navigationItem" id="UJu-ml-dpZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="EJW-D4-dqY">
+                            <connections>
+                                <action selector="barSaveButton:" destination="AAo-J0-f8u" id="MsM-4v-bDc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="5Z7-bI-0e5" id="6LP-k8-Qyt"/>
                         <outlet property="hoursTextField" destination="CM1-zZ-5yN" id="MvY-0u-FNU"/>
+                        <outlet property="saveBtn" destination="fw9-Du-BCM" id="SDe-uu-YVl"/>
                         <outlet property="titelTextField" destination="Oqc-iF-lar" id="tks-z8-sqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhF-NM-Jjr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="A9v-d5-Pua" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="410" y="2183"/>
+            <point key="canvasLocation" x="3880" y="1474"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="ZbS-xi-WWj">
@@ -880,7 +886,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ad-Li-lHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282.608695652174" y="1462.5"/>
+            <point key="canvasLocation" x="2449" y="726"/>
         </scene>
         <!--Interval Settings Table View Controller-->
         <scene sceneID="ZCM-Fc-qAD">
@@ -1025,7 +1031,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acB-zk-WUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2173.913043478261" y="1462.5"/>
+            <point key="canvasLocation" x="3880" y="726"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1138,7 +1144,7 @@ you to the
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8n-bK-rw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-798.55072463768124" y="-887.27678571428567"/>
+            <point key="canvasLocation" x="-799" y="-735"/>
         </scene>
         <!--Page Data View Controller-->
         <scene sceneID="MvX-c0-xDb">
@@ -1192,7 +1198,7 @@ POMODORO</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0X-j5-CjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="-899"/>
+            <point key="canvasLocation" x="738" y="-747"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="zLG-et-qyR">
@@ -1200,7 +1206,7 @@ POMODORO</string>
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5zR-af-CdS" customClass="PageViewController" customModule="pomo" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcI-pt-zi1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-799" y="-1562"/>
+            <point key="canvasLocation" x="3970" y="0.0"/>
         </scene>
         <!--Page Data View Controller-->
         <scene sceneID="dtq-ba-jMg">
@@ -1253,7 +1259,7 @@ to get done</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Epe-Ob-nCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-899.33035714285711"/>
+            <point key="canvasLocation" x="0.0" y="-747"/>
         </scene>
         <!--Page Data View Controller-->
         <scene sceneID="ol8-Ps-uOe">
@@ -1306,7 +1312,7 @@ Breaks keep you fresh.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kT-Np-D63" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513.0434782608697" y="-899.33035714285711"/>
+            <point key="canvasLocation" x="1513" y="-747"/>
         </scene>
         <!--Page Data View Controller-->
         <scene sceneID="y1M-og-7Es">
@@ -1361,7 +1367,7 @@ of 20 min.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y6-AM-jMk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="-899"/>
+            <point key="canvasLocation" x="2277" y="-747"/>
         </scene>
         <!--Allow Notifications View Controller-->
         <scene sceneID="9x3-t4-tsV">
@@ -1433,7 +1439,7 @@ to work</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uru-dw-Llo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1sN-Mg-G9A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3121.739130434783" y="-899.33035714285711"/>
+            <point key="canvasLocation" x="3122" y="-747"/>
         </scene>
         <!--Page Data View Controller-->
         <scene sceneID="zns-59-eTt">
@@ -1488,7 +1494,7 @@ done</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uM-mA-imf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3970" y="-899"/>
+            <point key="canvasLocation" x="3970" y="-747"/>
         </scene>
     </scenes>
     <resources>

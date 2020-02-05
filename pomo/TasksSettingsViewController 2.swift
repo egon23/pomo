@@ -20,7 +20,6 @@ class TasksSettingsViewController: UITableViewController {
         let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Task")) as! [Task]
         
         self.tasks = data
-        if tasks.count > 0 {empty = false}
         tableView.reloadData()
     }
     
@@ -30,7 +29,7 @@ class TasksSettingsViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Tasks"
         
-        
+        if tasks.count > 0 {empty = false}
         
     }
 
@@ -102,6 +101,16 @@ class TasksSettingsViewController: UITableViewController {
         }
     }
     
+    @IBAction func didUnwind(_ sender: UIStoryboardSegue){
+        guard let vc = sender.source as? AddTaskViewController else {return}
+        let task: Task = Task(context: UIApplication.appDelegate.managedContext!)
+        task.name = vc.titelTextField.text ?? "New Task"
+        task.estimatedHours = Double(vc.hoursTextField.text ?? "")!
+        task.deadline = vc.datePicker.date
+        UIApplication.appDelegate.saveContext()
+        empty = false
+    }
+   
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let data = tasks[indexPath.row]

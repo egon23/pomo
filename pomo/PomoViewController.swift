@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, AddTaskDelegate {
     enum timerStates {
         case RUNNING
         case PAUSED
@@ -55,11 +55,17 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         super.viewWillAppear(animated)
         let data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Task")) as! [Task]
         self.tasks = data
+        if let task = selectedTask {
+            if !tasks.contains(task) {
+                taskField.text = "Select a task.."
+                startBtn.isEnabled = false
+            }
+        }
         pomoTimeInMinutes = UserDefaults.standard.object(forKey: "pomoLength") as? Int ?? 25
         shortBreakTimeInMinutes = UserDefaults.standard.object(forKey: "shortBreakLength") as? Int ?? 5
         longBreakTimeInMinutes = UserDefaults.standard.object(forKey: "longBreakLength") as? Int ?? 20
     }
-
+    
     func setCurrentDay() {
         var data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Day")) as! [Day]
         data.sort{ $0.date?.compare($1.date!) == .orderedDescending}
@@ -76,34 +82,49 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    func addTaskWillDismissed() {
+        self.viewWillAppear(true)
+        selectedTask = tasks[0]
+        taskField.text = selectedTask?.name
+    }
+    
     // MARK: - PickerView for Tasks
     var myPicker: UIPickerView! = UIPickerView()
     @IBAction func changeTask(_ sender: Any) {
-        taskField.becomeFirstResponder()
+        if !tasks.isEmpty {
+            taskField.becomeFirstResponder()
+        } else {
+        }
     }
     
     @IBAction func selectTask(_ sender: UITextField) {
-        let tintColor: UIColor = UIColor(red: 101.0/255.0, green: 98.0/255.0, blue: 164.0/255.0, alpha: 1.0)
-        let inputView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 240))
-        myPicker.tintColor = tintColor
-        myPicker.center.x = inputView.center.x
-        inputView.addSubview(myPicker) // add date picker to UIView
-        let doneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        doneButton.setTitle("Cancel", for: .normal)
-        doneButton.setTitle("Cancel", for: .highlighted)
-        doneButton.setTitleColor(tintColor, for: .normal)
-        doneButton.setTitleColor(tintColor, for: .highlighted)
-        inputView.addSubview(doneButton) // add Button to UIView
-        doneButton.addTarget(self, action: #selector(cancelPicker), for: .touchUpInside) // set button click event
-
-        let cancelButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 0, width: 100, height: 50))
-        cancelButton.setTitle("Done", for: .normal)
-        cancelButton.setTitle("Done", for: .highlighted)
-        cancelButton.setTitleColor(tintColor, for: .normal)
-        cancelButton.setTitleColor(tintColor, for: .highlighted)
-        inputView.addSubview(cancelButton) // add Button to UIView
-        cancelButton.addTarget(self, action: #selector(setTask), for: .touchUpInside) // set button click event
-        sender.inputView = inputView
+        if !tasks.isEmpty {
+            let tintColor: UIColor = UIColor(red: 101.0/255.0, green: 98.0/255.0, blue: 164.0/255.0, alpha: 1.0)
+            let inputView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 240))
+            myPicker.tintColor = tintColor
+            myPicker.center.x = inputView.center.x
+            inputView.addSubview(myPicker) // add date picker to UIView
+            
+            let doneButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+            doneButton.setTitle("Cancel", for: .normal)
+            doneButton.setTitle("Cancel", for: .highlighted)
+            doneButton.setTitleColor(tintColor, for: .normal)
+            doneButton.setTitleColor(tintColor, for: .highlighted)
+            inputView.addSubview(doneButton) // add Button to UIView
+            doneButton.addTarget(self, action: #selector(cancelPicker), for: .touchUpInside) // set button click event
+            
+            let cancelButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 0, width: 100, height: 50))
+            cancelButton.setTitle("Done", for: .normal)
+            cancelButton.setTitle("Done", for: .highlighted)
+            cancelButton.setTitleColor(tintColor, for: .normal)
+            cancelButton.setTitleColor(tintColor, for: .highlighted)
+            inputView.addSubview(cancelButton) // add Button to UIView
+            cancelButton.addTarget(self, action: #selector(setTask), for: .touchUpInside) // set button click event
+            sender.inputView = inputView
+        } else {
+            showAddTaskView(sender: sender)
+        }
+        
     }
     
     @objc func cancelPicker(sender:UIButton) {
@@ -121,6 +142,15 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             setCurrentDay()
         }
         stopTimer(stopBtn)
+    }
+    
+    func showAddTaskView(sender: UITextField) {
+        sender.inputView?.isHidden = true
+        sender.resignFirstResponder() // To resign the inputView on clicking done.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let modalVC = storyboard.instantiateViewController(identifier: "AddTaskViewController") as! AddTaskViewController
+        modalVC.del = self
+        self.present(modalVC, animated: true, completion: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
