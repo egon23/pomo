@@ -21,8 +21,6 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBar.items?[1].image = UIImage(systemName: "clock")
     }
     
-    
-    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         if let fromView = tabBarController.selectedViewController?.view,
@@ -50,6 +48,15 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
                 }
             })
             return true
+        }
+        if let fromView = tabBarController.selectedViewController?.view,
+            let toView = viewController.view,
+            let controllerIndex = self.viewControllers?.firstIndex(of: viewController),
+            fromView == toView && controllerIndex == 1 {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let modalVC = storyboard.instantiateViewController(identifier: "AddTaskViewController") as! AddTaskViewController
+                modalVC.del = viewController as! PomoViewController
+                self.present(modalVC, animated: true, completion: nil)
         }
         return false
     }

@@ -84,8 +84,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     func addTaskWillDismissed() {
         self.viewWillAppear(true)
-        selectedTask = tasks[0]
-        taskField.text = selectedTask?.name
+        myPicker.selectRow(0, inComponent: 0, animated: false)
+        setTask(sender: startBtn)
     }
     
     // MARK: - PickerView for Tasks
