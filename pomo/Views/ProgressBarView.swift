@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ProgressBar: UIView, CAAnimationDelegate {
+class ProgressBarView: UIView, CAAnimationDelegate {
     
     fileprivate var animation = CABasicAnimation()
     fileprivate var animationDidStart = false

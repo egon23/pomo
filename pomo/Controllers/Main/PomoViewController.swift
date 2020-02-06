@@ -30,7 +30,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         return countdownTimer
     }()
     
-    @IBOutlet weak var progressBar: ProgressBar!
+    @IBOutlet weak var progressBar: ProgressBarView!
     @IBOutlet weak var minutes: UILabel!
     @IBOutlet weak var seconds: UILabel!
     @IBOutlet weak var counterView: UIStackView!
@@ -57,7 +57,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         self.tasks = data
         if let task = selectedTask {
             if !tasks.contains(task) {
-                taskField.text = "Select a task.."
+                taskField.text = "Select a task"
                 startBtn.isEnabled = false
             }
         }

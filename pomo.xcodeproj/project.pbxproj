@@ -20,12 +20,11 @@
 		7AE649B223E091A700035262 /* pomoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649B123E091A700035262 /* pomoTests.swift */; };
 		7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649BC23E0A22800035262 /* BaseTabBarController.swift */; };
 		7AE649BF23E0A50B00035262 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649BE23E0A50B00035262 /* CustomColor.swift */; };
-		7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C023E0A5AD00035262 /* ProgressBar.swift */; };
+		7AE649C123E0A5AD00035262 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C023E0A5AD00035262 /* ProgressBarView.swift */; };
 		7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE649C423E0B5C900035262 /* CountdownTimer.swift */; };
 		C46E6B4B3CDF6C910D8DEB1A /* Pods_pomoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3EED0857CEECA859C4A0241 /* Pods_pomoTests.framework */; };
 		DD61CDC2F0EA625556F625F5 /* Pods_pomo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE8983FA0E66E2BD5B28CC0 /* Pods_pomo.framework */; };
 		F85EE1E823E8784B00AC81C9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85EE1E723E8784B00AC81C9 /* CloudKit.framework */; };
-		F85EE1FD23E9A7AC00AC81C9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85EE1FC23E9A7AC00AC81C9 /* Onboarding.storyboard */; };
 		F85EE1FF23E9D3DD00AC81C9 /* PageDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85EE1FE23E9D3DD00AC81C9 /* PageDataViewController.swift */; };
 		F8BA3D2D23EA189A00987206 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8BA3D2423EA189900987206 /* Gotham-Book.otf */; };
 		F8BA3D2E23EA189A00987206 /* GothamNarrow-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8BA3D2523EA189900987206 /* GothamNarrow-Ultra.otf */; };
@@ -41,7 +40,6 @@
 		F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD69DD23E1B1580013411F /* DayCell.swift */; };
 		F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079823E1C65D00EFE453 /* DayViewController.swift */; };
 		F8E3079B23E1CE6F00EFE453 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */; };
-		F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079C23E1D31900EFE453 /* SettingsCell.swift */; };
 		F8E3079F23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */; };
 		F8E307A123E1F3C500EFE453 /* TasksSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */; };
 		F8E307A323E1F72500EFE453 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */; };
@@ -82,7 +80,7 @@
 		7AE649B323E091A700035262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AE649BC23E0A22800035262 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		7AE649BE23E0A50B00035262 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
-		7AE649C023E0A5AD00035262 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		7AE649C023E0A5AD00035262 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		7AE649C423E0B5C900035262 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 		8391444D82A44CB29E0452CF /* Pods-pomoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomoTests.release.xcconfig"; path = "Target Support Files/Pods-pomoTests/Pods-pomoTests.release.xcconfig"; sourceTree = "<group>"; };
 		87AF731DACF19667EC88B01C /* Pods-pomo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pomo.debug.xcconfig"; path = "Target Support Files/Pods-pomo/Pods-pomo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 		F85EE1EB23E88AE800AC81C9 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "/Downloads/gotham_ssv/Gotham-Medium.otf"; sourceTree = "<absolute>"; };
 		F85EE1ED23E88AE800AC81C9 /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Black.otf"; path = "/Downloads/gotham_ssv/GothamNarrow-Black.otf"; sourceTree = "<absolute>"; };
 		F85EE1EE23E88AE800AC81C9 /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Thin.otf"; path = "/Downloads/gotham_ssv/GothamNarrow-Thin.otf"; sourceTree = "<absolute>"; };
-		F85EE1FC23E9A7AC00AC81C9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F85EE1FE23E9D3DD00AC81C9 /* PageDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDataViewController.swift; sourceTree = "<group>"; };
 		F8BA3D2423EA189900987206 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		F8BA3D2523EA189900987206 /* GothamNarrow-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Ultra.otf"; sourceTree = "<group>"; };
@@ -106,12 +103,11 @@
 		F8BA3D2A23EA189900987206 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		F8BA3D2B23EA189900987206 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
 		F8BA3D2C23EA189A00987206 /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Thin.otf"; sourceTree = "<group>"; };
-		F8C52E0A23E9E76B00A91054 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
+		F8C52E0A23E9E76B00A91054 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F8C52E0C23E9FC9100A91054 /* AllowNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowNotificationsViewController.swift; sourceTree = "<group>"; };
 		F8CD69DD23E1B1580013411F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		F8E3079823E1C65D00EFE453 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		F8E3079C23E1D31900EFE453 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSettingsTableViewController.swift; sourceTree = "<group>"; };
 		F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSettingsViewController.swift; sourceTree = "<group>"; };
 		F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +157,98 @@
 			path = Button_Label_Round;
 			sourceTree = "<group>";
 		};
+		7A66DC7023EC3528001C612D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A66DC7823EC51D7001C612D /* Tutorial */,
+				7A66DC7523EC4F58001C612D /* Main */,
+				7A66DC7723EC5007001C612D /* Settings */,
+				7A66DC7623EC4FA8001C612D /* Statistics */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7A66DC7123EC3571001C612D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A66DC7223EC3A7C001C612D /* Cells */,
+				7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */,
+				7AE649C023E0A5AD00035262 /* ProgressBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A66DC7223EC3A7C001C612D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F8E307A723E214EA00EFE453 /* TaskCell.swift */,
+				F8CD69DD23E1B1580013411F /* DayCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7A66DC7323EC3C73001C612D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F805B20723E795F700AA7F4C /* pomo.entitlements */,
+				7AE649A023E091A600035262 /* pomo.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7A66DC7423EC3E4C001C612D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7AE6499523E091A600035262 /* AppDelegate.swift */,
+				7AE6499723E091A600035262 /* SceneDelegate.swift */,
+				F8E307A423E2078300EFE453 /* Main.storyboard */,
+				7AE649A523E091A700035262 /* LaunchScreen.storyboard */,
+				7AE649C423E0B5C900035262 /* CountdownTimer.swift */,
+				7AE649BE23E0A50B00035262 /* CustomColor.swift */,
+				7AE649A823E091A700035262 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		7A66DC7523EC4F58001C612D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7AE649BC23E0A22800035262 /* BaseTabBarController.swift */,
+				7AE6499B23E091A600035262 /* PomoViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7A66DC7623EC4FA8001C612D /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				7AE6499923E091A600035262 /* StatisticsViewController.swift */,
+				F8E3079823E1C65D00EFE453 /* DayViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		7A66DC7723EC5007001C612D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */,
+				F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */,
+				F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */,
+				F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7A66DC7823EC51D7001C612D /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				F8C52E0A23E9E76B00A91054 /* PageViewController.swift */,
+				F85EE1FE23E9D3DD00AC81C9 /* PageDataViewController.swift */,
+				F8C52E0C23E9FC9100A91054 /* AllowNotificationsViewController.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
 		7AE6498923E091A600035262 = {
 			isa = PBXGroup;
 			children = (
@@ -185,35 +273,13 @@
 		7AE6499423E091A600035262 /* pomo */ = {
 			isa = PBXGroup;
 			children = (
+				7A66DC7423EC3E4C001C612D /* SupportingFiles */,
+				7A66DC7323EC3C73001C612D /* CoreData */,
+				7A66DC7123EC3571001C612D /* Views */,
+				7A66DC7023EC3528001C612D /* Controllers */,
 				F8BA3D0823EA17D700987206 /* Fonts */,
-				F8C52E0A23E9E76B00A91054 /* PageViewController.swift */,
-				F85EE1FC23E9A7AC00AC81C9 /* Onboarding.storyboard */,
-				F805B20723E795F700AA7F4C /* pomo.entitlements */,
 				7A08028E23E3644600FC4C08 /* Button_Label_Round */,
-				F8E307A423E2078300EFE453 /* Main.storyboard */,
-				7AE6499523E091A600035262 /* AppDelegate.swift */,
-				7AE6499B23E091A600035262 /* PomoViewController.swift */,
-				7AE6499723E091A600035262 /* SceneDelegate.swift */,
-				7AE649C023E0A5AD00035262 /* ProgressBar.swift */,
-				7AE649BE23E0A50B00035262 /* CustomColor.swift */,
 				7AE649A323E091A700035262 /* Assets.xcassets */,
-				7AE6499923E091A600035262 /* StatisticsViewController.swift */,
-				7AE649A523E091A700035262 /* LaunchScreen.storyboard */,
-				7AE649A823E091A700035262 /* Info.plist */,
-				7AE649A023E091A600035262 /* pomo.xcdatamodeld */,
-				7AE649BC23E0A22800035262 /* BaseTabBarController.swift */,
-				7AE649C423E0B5C900035262 /* CountdownTimer.swift */,
-				F8CD69DD23E1B1580013411F /* DayCell.swift */,
-				F8E3079823E1C65D00EFE453 /* DayViewController.swift */,
-				F8E3079A23E1CE6F00EFE453 /* SettingsViewController.swift */,
-				F8E3079C23E1D31900EFE453 /* SettingsCell.swift */,
-				F8E3079E23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift */,
-				F8E307A023E1F3C500EFE453 /* TasksSettingsViewController.swift */,
-				F8E307A223E1F72500EFE453 /* AddTaskViewController.swift */,
-				F8E307A723E214EA00EFE453 /* TaskCell.swift */,
-				F85EE1FE23E9D3DD00AC81C9 /* PageDataViewController.swift */,
-				F8C52E0C23E9FC9100A91054 /* AllowNotificationsViewController.swift */,
-				7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */,
 			);
 			path = pomo;
 			sourceTree = "<group>";
@@ -330,7 +396,7 @@
 				};
 			};
 			buildConfigurationList = 7AE6498D23E091A600035262 /* Build configuration list for PBXProject "pomo" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -354,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8BA3D3023EA189A00987206 /* GothamNarrow-Black.otf in Resources */,
-				F85EE1FD23E9A7AC00AC81C9 /* Onboarding.storyboard in Resources */,
 				F8BA3D3323EA189A00987206 /* Gotham-Medium.otf in Resources */,
 				F8E307A623E2078300EFE453 /* Main.storyboard in Resources */,
 				F8BA3D2D23EA189A00987206 /* Gotham-Book.otf in Resources */,
@@ -458,7 +523,6 @@
 				F8E3079923E1C65D00EFE453 /* DayViewController.swift in Sources */,
 				7A804D2023E9E25600D160D6 /* WeekStatsView.swift in Sources */,
 				F8CD69DE23E1B1580013411F /* DayCell.swift in Sources */,
-				F8E3079D23E1D31900EFE453 /* SettingsCell.swift in Sources */,
 				7AE649A223E091A600035262 /* pomo.xcdatamodeld in Sources */,
 				7AE649BD23E0A22800035262 /* BaseTabBarController.swift in Sources */,
 				F8C52E0B23E9E76B00A91054 /* PageViewController.swift in Sources */,
@@ -466,7 +530,7 @@
 				7AE649C523E0B5C900035262 /* CountdownTimer.swift in Sources */,
 				F8E3079F23E1DAE300EFE453 /* IntervalSettingsTableViewController.swift in Sources */,
 				7AE6499623E091A600035262 /* AppDelegate.swift in Sources */,
-				7AE649C123E0A5AD00035262 /* ProgressBar.swift in Sources */,
+				7AE649C123E0A5AD00035262 /* ProgressBarView.swift in Sources */,
 				7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */,
 				F8E3079B23E1CE6F00EFE453 /* SettingsViewController.swift in Sources */,
 				F8E307A123E1F3C500EFE453 /* TasksSettingsViewController.swift in Sources */,
@@ -630,10 +694,10 @@
 			baseConfigurationReference = 87AF731DACF19667EC88B01C /* Pods-pomo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = pomo/pomo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = pomo/CoreData/pomo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9R3T4GU5H;
-				INFOPLIST_FILE = pomo/Info.plist;
+				DEVELOPMENT_TEAM = FZ9J437R93;
+				INFOPLIST_FILE = pomo/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -651,10 +715,10 @@
 			baseConfigurationReference = D2BA74F2A45C5FE8533B8960 /* Pods-pomo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = pomo/pomo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = pomo/CoreData/pomo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9R3T4GU5H;
-				INFOPLIST_FILE = pomo/Info.plist;
+				DEVELOPMENT_TEAM = FZ9J437R93;
+				INFOPLIST_FILE = pomo/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

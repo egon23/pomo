@@ -14,7 +14,7 @@ class IntervalSettingsTableViewController: UITableViewController, UIPickerViewDe
     @IBOutlet weak var shortBreakText: UITextField!
     @IBOutlet weak var longBreakText: UITextField!
     var myPicker: UIPickerView! = UIPickerView()
-    let minutes: [Int] = Array(1...99)
+    let minutes: [Int] = Array(1...60)
     var currTextField = UITextField()
     
     
