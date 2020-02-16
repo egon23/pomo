@@ -61,7 +61,7 @@ class CountdownTimer {
     }
     
     fileprivate func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     @objc fileprivate func updateTimer(){
@@ -69,7 +69,7 @@ class CountdownTimer {
             timer.invalidate()
             timerDone()
         } else {
-            duration -= 0.01
+            duration -= 1
             delegate?.countdownTime(time: timeString(time: TimeInterval(ceil(duration))))
         }
     }

@@ -178,7 +178,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     func countdownTime(time: (hours: String, minutes: String, seconds: String)) {
         minutes.text = time.minutes
         seconds.text = time.seconds
-        updateData(sec: 0.01)
+        updateData(sec: 1)
     }
     
     
