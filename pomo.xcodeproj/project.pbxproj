@@ -10,6 +10,15 @@
 		7A08029123E3648F00FC4C08 /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08028F23E3648F00FC4C08 /* RoundLabel.swift */; };
 		7A08029223E3648F00FC4C08 /* roundbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08029023E3648F00FC4C08 /* roundbutton.swift */; };
 		7A804D2023E9E25600D160D6 /* WeekStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */; };
+		7AA8D7BA23FF11FA00515AC7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA8D7B823FF11FA00515AC7 /* Interface.storyboard */; };
+		7AA8D7BC23FF11FB00515AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA8D7BB23FF11FB00515AC7 /* Assets.xcassets */; };
+		7AA8D7C323FF11FB00515AC7 /* pomoWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7AA8D7C223FF11FB00515AC7 /* pomoWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7AA8D7C823FF11FB00515AC7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D7C723FF11FB00515AC7 /* InterfaceController.swift */; };
+		7AA8D7CA23FF11FB00515AC7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D7C923FF11FB00515AC7 /* ExtensionDelegate.swift */; };
+		7AA8D7CC23FF11FB00515AC7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D7CB23FF11FB00515AC7 /* NotificationController.swift */; };
+		7AA8D7CE23FF11FB00515AC7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D7CD23FF11FB00515AC7 /* ComplicationController.swift */; };
+		7AA8D7D023FF11FC00515AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA8D7CF23FF11FC00515AC7 /* Assets.xcassets */; };
+		7AA8D7D523FF11FC00515AC7 /* pomoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7AA8D7B623FF11FA00515AC7 /* pomoWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7AE6499623E091A600035262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499523E091A600035262 /* AppDelegate.swift */; };
 		7AE6499823E091A600035262 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499723E091A600035262 /* SceneDelegate.swift */; };
 		7AE6499A23E091A600035262 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6499923E091A600035262 /* StatisticsViewController.swift */; };
@@ -48,6 +57,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7AA8D7C423FF11FB00515AC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AE6498A23E091A600035262 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA8D7C123FF11FB00515AC7;
+			remoteInfo = "pomoWatch Extension";
+		};
+		7AA8D7D323FF11FC00515AC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AE6498A23E091A600035262 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA8D7B523FF11FA00515AC7;
+			remoteInfo = pomoWatch;
+		};
 		7AE649AE23E091A700035262 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7AE6498A23E091A600035262 /* Project object */;
@@ -56,6 +79,31 @@
 			remoteInfo = pomo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AA8D7D623FF11FC00515AC7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7AA8D7D523FF11FC00515AC7 /* pomoWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA8D7D923FF11FC00515AC7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7AA8D7C323FF11FB00515AC7 /* pomoWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7A08028F23E3648F00FC4C08 /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
@@ -66,6 +114,18 @@
 		7A804D1423E8ACE200D160D6 /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Black.otf"; sourceTree = "<group>"; };
 		7A804D1523E8ACE200D160D6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
 		7A804D1F23E9E25600D160D6 /* WeekStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStatsView.swift; sourceTree = "<group>"; };
+		7AA8D7B623FF11FA00515AC7 /* pomoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA8D7B923FF11FA00515AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		7AA8D7BB23FF11FB00515AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AA8D7BD23FF11FB00515AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA8D7C223FF11FB00515AC7 /* pomoWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "pomoWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA8D7C723FF11FB00515AC7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		7AA8D7C923FF11FB00515AC7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		7AA8D7CB23FF11FB00515AC7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		7AA8D7CD23FF11FB00515AC7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		7AA8D7CF23FF11FC00515AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AA8D7D123FF11FC00515AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA8D7D223FF11FC00515AC7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		7AE6499223E091A600035262 /* pomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE6499523E091A600035262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE6499723E091A600035262 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +177,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7AA8D7BF23FF11FB00515AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AE6498F23E091A600035262 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,11 +316,37 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
+		7AA8D7B723FF11FA00515AC7 /* pomoWatch */ = {
+			isa = PBXGroup;
+			children = (
+				7AE649B023E091A700035262 /* pomoTests */,
+				7AA8D7B823FF11FA00515AC7 /* Interface.storyboard */,
+				7AA8D7BB23FF11FB00515AC7 /* Assets.xcassets */,
+				7AA8D7BD23FF11FB00515AC7 /* Info.plist */,
+			);
+			path = pomoWatch;
+			sourceTree = "<group>";
+		};
+		7AA8D7C623FF11FB00515AC7 /* pomoWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7AA8D7C723FF11FB00515AC7 /* InterfaceController.swift */,
+				7AA8D7C923FF11FB00515AC7 /* ExtensionDelegate.swift */,
+				7AA8D7CB23FF11FB00515AC7 /* NotificationController.swift */,
+				7AA8D7CD23FF11FB00515AC7 /* ComplicationController.swift */,
+				7AA8D7CF23FF11FC00515AC7 /* Assets.xcassets */,
+				7AA8D7D123FF11FC00515AC7 /* Info.plist */,
+				7AA8D7D223FF11FC00515AC7 /* PushNotificationPayload.apns */,
+			);
+			path = "pomoWatch Extension";
+			sourceTree = "<group>";
+		};
 		7AE6498923E091A600035262 = {
 			isa = PBXGroup;
 			children = (
 				7AE6499423E091A600035262 /* pomo */,
-				7AE649B023E091A700035262 /* pomoTests */,
+				7AA8D7B723FF11FA00515AC7 /* pomoWatch */,
+				7AA8D7C623FF11FB00515AC7 /* pomoWatch Extension */,
 				7AE6499323E091A600035262 /* Products */,
 				F85EE1E623E8784B00AC81C9 /* Frameworks */,
 				73DA23CF20B3AB9E5AFFE6B1 /* Pods */,
@@ -266,6 +359,8 @@
 			children = (
 				7AE6499223E091A600035262 /* pomo.app */,
 				7AE649AD23E091A700035262 /* pomoTests.xctest */,
+				7AA8D7B623FF11FA00515AC7 /* pomoWatch.app */,
+				7AA8D7C223FF11FB00515AC7 /* pomoWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,6 +433,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7AA8D7B523FF11FA00515AC7 /* pomoWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA8D7DD23FF11FC00515AC7 /* Build configuration list for PBXNativeTarget "pomoWatch" */;
+			buildPhases = (
+				7AA8D7B423FF11FA00515AC7 /* Resources */,
+				7AA8D7D923FF11FC00515AC7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AA8D7C523FF11FB00515AC7 /* PBXTargetDependency */,
+			);
+			name = pomoWatch;
+			productName = pomoWatch;
+			productReference = 7AA8D7B623FF11FA00515AC7 /* pomoWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		7AA8D7C123FF11FB00515AC7 /* pomoWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA8D7DC23FF11FC00515AC7 /* Build configuration list for PBXNativeTarget "pomoWatch Extension" */;
+			buildPhases = (
+				7AA8D7BE23FF11FB00515AC7 /* Sources */,
+				7AA8D7BF23FF11FB00515AC7 /* Frameworks */,
+				7AA8D7C023FF11FB00515AC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pomoWatch Extension";
+			productName = "pomoWatch Extension";
+			productReference = 7AA8D7C223FF11FB00515AC7 /* pomoWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		7AE6499123E091A600035262 /* pomo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AE649B623E091A700035262 /* Build configuration list for PBXNativeTarget "pomo" */;
@@ -347,10 +476,12 @@
 				7AE6498F23E091A600035262 /* Frameworks */,
 				7AE6499023E091A600035262 /* Resources */,
 				5D0161896DED33B5AF50682D /* [CP] Embed Pods Frameworks */,
+				7AA8D7D623FF11FC00515AC7 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7AA8D7D423FF11FC00515AC7 /* PBXTargetDependency */,
 			);
 			name = pomo;
 			productName = pomo;
@@ -386,6 +517,12 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Egon Manya";
 				TargetAttributes = {
+					7AA8D7B523FF11FA00515AC7 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					7AA8D7C123FF11FB00515AC7 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					7AE6499123E091A600035262 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -410,11 +547,30 @@
 			targets = (
 				7AE6499123E091A600035262 /* pomo */,
 				7AE649AC23E091A700035262 /* pomoTests */,
+				7AA8D7B523FF11FA00515AC7 /* pomoWatch */,
+				7AA8D7C123FF11FB00515AC7 /* pomoWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7AA8D7B423FF11FA00515AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA8D7BC23FF11FB00515AC7 /* Assets.xcassets in Resources */,
+				7AA8D7BA23FF11FA00515AC7 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA8D7C023FF11FB00515AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA8D7D023FF11FC00515AC7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AE6499023E091A600035262 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +664,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7AA8D7BE23FF11FB00515AC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA8D7CC23FF11FB00515AC7 /* NotificationController.swift in Sources */,
+				7AA8D7CE23FF11FB00515AC7 /* ComplicationController.swift in Sources */,
+				7AA8D7CA23FF11FB00515AC7 /* ExtensionDelegate.swift in Sources */,
+				7AA8D7C823FF11FB00515AC7 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AE6498E23E091A600035262 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,6 +715,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7AA8D7C523FF11FB00515AC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AA8D7C123FF11FB00515AC7 /* pomoWatch Extension */;
+			targetProxy = 7AA8D7C423FF11FB00515AC7 /* PBXContainerItemProxy */;
+		};
+		7AA8D7D423FF11FC00515AC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AA8D7B523FF11FA00515AC7 /* pomoWatch */;
+			targetProxy = 7AA8D7D323FF11FC00515AC7 /* PBXContainerItemProxy */;
+		};
 		7AE649AF23E091A700035262 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7AE6499123E091A600035262 /* pomo */;
@@ -556,6 +733,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7AA8D7B823FF11FA00515AC7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA8D7B923FF11FA00515AC7 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		7AE649A523E091A700035262 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -575,6 +760,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7AA8D7D723FF11FC00515AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FZ9J437R93;
+				IBSC_MODULE = pomoWatch_Extension;
+				INFOPLIST_FILE = pomoWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = roli.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		7AA8D7D823FF11FC00515AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FZ9J437R93;
+				IBSC_MODULE = pomoWatch_Extension;
+				INFOPLIST_FILE = pomoWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = roli.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		7AA8D7DA23FF11FC00515AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FZ9J437R93;
+				INFOPLIST_FILE = "pomoWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = roli.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		7AA8D7DB23FF11FC00515AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FZ9J437R93;
+				INFOPLIST_FILE = "pomoWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = roli.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 		7AE649B423E091A700035262 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -780,6 +1047,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7AA8D7DC23FF11FC00515AC7 /* Build configuration list for PBXNativeTarget "pomoWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA8D7DA23FF11FC00515AC7 /* Debug */,
+				7AA8D7DB23FF11FC00515AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AA8D7DD23FF11FC00515AC7 /* Build configuration list for PBXNativeTarget "pomoWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA8D7D723FF11FC00515AC7 /* Debug */,
+				7AA8D7D823FF11FC00515AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7AE6498D23E091A600035262 /* Build configuration list for PBXProject "pomo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

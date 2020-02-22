@@ -8,12 +8,14 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
-class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, AddTaskDelegate {
-    enum timerStates {
-        case RUNNING
-        case PAUSED
-        case STOPPED
+class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, AddTaskDelegate, WCSessionDelegate {
+    
+    enum timerStates: String {
+        case RUNNING = "RUNNING"
+        case PAUSED = "PAUSED"
+        case STOPPED = "STOPPED"
     }
     var pomoTimeInMinutes: Int = 25
     var shortBreakTimeInMinutes: Int = 5
@@ -24,6 +26,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     var day: Day?
     var tasks: [Task] = []
     var selectedTask: Task?
+    var wcSession: WCSession?
     
     lazy var countdownTimer: CountdownTimer = {
         let countdownTimer = CountdownTimer()
@@ -49,6 +52,11 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         countdownTimer.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+        if WCSession.isSupported() {
+            wcSession = WCSession.default
+            wcSession?.delegate = self
+            wcSession?.activate()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -245,6 +253,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             startBtn.setTitle("PAUSE",for: .normal)
             setNotification(notificationType: cycleCountLabel.text!)
         }
+        setWatchTimer(sec: countdownTimer.getDuratiion())
     }
     
     @IBAction func skipCycle(_ sender: UIButton) {
@@ -264,6 +273,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         startBtn.setTitle("START",for: .normal)
         setupCountdownTimer()
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
+        setWatchTimer(sec: countdownTimer.getDuratiion())
         print(selectedTask?.workedHours ?? 0)
     }
     
@@ -302,4 +312,18 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             }
         }
     }
+    
+    func setWatchTimer(sec:Double) {
+        if wcSession?.isPaired ?? false && wcSession?.isWatchAppInstalled ?? false {
+            wcSession?.sendMessage(["action":countdownTimerState.rawValue, "duration":sec.description], replyHandler: nil) { (error) in
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    
+    func sessionDidDeactivate(_ session: WCSession) {}
 }
