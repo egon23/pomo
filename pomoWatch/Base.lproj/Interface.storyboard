@@ -1,29 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+    <device id="watch44"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Light.otf">
+            <string>Gotham-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="pomoWatch" customModuleProvider="target">
                     <items>
-                        <timer alignment="center" verticalAlignment="center" textAlignment="center" previewedSeconds="1500" id="rIu-CP-Heq">
-                            <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                        <label alignment="center" text="1. Pomodoro" textAlignment="center" numberOfLines="0" id="jfU-R3-4XO">
+                            <fontDescription key="font" name="Gotham-Light" family="Gotham" pointSize="18"/>
+                        </label>
+                        <timer alignment="center" verticalAlignment="center" previewedSeconds="1500" id="rIu-CP-Heq">
+                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="46"/>
                             <calendarUnit key="units" minute="YES" second="YES"/>
                         </timer>
-                        <label alignment="left" text="Label" id="Kba-jz-vXB"/>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Start" id="AKB-Sd-t4d">
+                            <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="startTouched" destination="AgC-eL-Hgc" id="Yi8-VC-Wyi"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="T2W-hI-Yob">
+                            <items>
+                                <button alignment="left" verticalAlignment="center" id="fTp-m9-3Hw">
+                                    <group key="contentGroup" alignment="left" id="Lpr-ZI-cEb">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="center" verticalAlignment="center" image="stop.fill" catalog="system" id="jLU-3g-tlY">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <action selector="stopTouched" destination="AgC-eL-Hgc" id="Fdf-cP-h0t"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" verticalAlignment="center" id="XOg-G2-Dcm">
+                                    <group key="contentGroup" alignment="left" id="7y3-DL-1Ne">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="right" verticalAlignment="bottom" image="forward.fill" catalog="system" id="3AP-OT-qqt">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <action selector="skipTouched" destination="AgC-eL-Hgc" id="jqg-Tz-N1Z"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <connections>
-                        <outlet property="lbl" destination="Kba-jz-vXB" id="1my-lr-5yt"/>
+                        <outlet property="cycleLabel" destination="jfU-R3-4XO" id="WlN-dV-6xy"/>
+                        <outlet property="skipBtn" destination="XOg-G2-Dcm" id="P19-5K-Kmz"/>
+                        <outlet property="startBtn" destination="AKB-Sd-t4d" id="kId-FT-AbW"/>
+                        <outlet property="stopBtn" destination="fTp-m9-3Hw" id="chD-aH-dMM"/>
                         <outlet property="timer" destination="rIu-CP-Heq" id="oyn-vh-oXq"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="198" y="345"/>
+            <point key="canvasLocation" x="274" y="379"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -40,21 +84,26 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="292" y="711"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="pomoWatch" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="540" y="711"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
                 <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="pomoWatch" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="540" y="413"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="forward.fill" catalog="system" width="64" height="38"/>
+        <image name="stop.fill" catalog="system" width="64" height="56"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

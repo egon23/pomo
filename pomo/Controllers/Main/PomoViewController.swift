@@ -27,6 +27,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     var tasks: [Task] = []
     var selectedTask: Task?
     var wcSession: WCSession?
+    var didReceiveMessageFromWatch = false
+    var titleText = ""
     
     lazy var countdownTimer: CountdownTimer = {
         let countdownTimer = CountdownTimer()
@@ -50,13 +52,14 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         myPicker.delegate = self
         myPicker.dataSource = self
         countdownTimer.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
         if WCSession.isSupported() {
             wcSession = WCSession.default
             wcSession?.delegate = self
             wcSession?.activate()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willTerminateApplication(noti:)), name: UIApplication.willTerminateNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -184,8 +187,10 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     //MARK: - Countdown Timer Delegate
     
     func countdownTime(time: (hours: String, minutes: String, seconds: String)) {
-        minutes.text = time.minutes
-        seconds.text = time.seconds
+        DispatchQueue.main.async {
+            self.minutes.text = time.minutes
+            self.seconds.text = time.seconds
+        }
         updateData(sec: 1)
     }
     
@@ -193,12 +198,12 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     func countdownTimerDone() {
         countdownTimerState = timerStates.STOPPED
         setupCountdownTimer()
-        stopBtn.isEnabled = false
-        startBtn.setTitle("START",for: .normal)
-        progressBar.stop()
         countdownTimer.removeSavedDate()
-        print("countdownTimerDone")
-        //startTimer(startBtn)
+        DispatchQueue.main.async {
+            self.stopBtn.isEnabled = false
+            self.startBtn.setTitle("START",for: .normal)
+            self.progressBar.stop()
+        }
     }
     
     func updateData(sec: Double) {
@@ -212,11 +217,10 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     }
     
     fileprivate func setupCountdownTimer() {
-        cycleCountLabel.isHidden = false
         var timeInMinutes = pomoTimeInMinutes
         if isTimeForBreak {
             timeInMinutes = shortBreakTimeInMinutes
-            cycleCountLabel.text = "Break"
+            titleText = "Break"
             isTimeForBreak = false
             if pomoCycleCounter == 4 {
                 timeInMinutes = longBreakTimeInMinutes
@@ -224,8 +228,12 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             }
         } else {
             pomoCycleCounter += 1
-            cycleCountLabel.text = "\(pomoCycleCounter). Pomodoro"
+            titleText = "\(pomoCycleCounter). Pomodoro"
             isTimeForBreak = true
+        }
+        DispatchQueue.main.async {
+            self.cycleCountLabel.isHidden = false
+            self.cycleCountLabel.text = self.titleText
         }
         countdownTimer.setTimer(hours: 0, minutes: timeInMinutes, seconds: 0)
         progressBar.setProgressBar(hours: 0, minutes: timeInMinutes, seconds: 0)
@@ -238,22 +246,30 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         if day == nil || !Calendar.current.isDateInToday((day?.date!)!) {
             setCurrentDay()
         }
-        stopBtn.isEnabled = true
-        nextBtn.isEnabled = true
-        if countdownTimerState == timerStates.RUNNING {
-            countdownTimer.pause()
-            progressBar.pause()
-            countdownTimerState = timerStates.PAUSED
-            startBtn.setTitle("RESUME",for: .normal)
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
-        } else {
-            countdownTimer.start()
-            progressBar.start()
-            countdownTimerState = timerStates.RUNNING
-            startBtn.setTitle("PAUSE",for: .normal)
-            setNotification(notificationType: cycleCountLabel.text!)
+        DispatchQueue.main.async {
+            self.stopBtn.isEnabled = true
+            self.nextBtn.isEnabled = true
         }
-        setWatchTimer(sec: countdownTimer.getDuratiion())
+        if countdownTimerState == timerStates.RUNNING {
+            countdownTimerState = timerStates.PAUSED
+            DispatchQueue.main.async {
+                self.countdownTimer.pause()
+                self.progressBar.pause()
+                self.startBtn.setTitle("RESUME",for: .normal)
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
+            }
+        } else {
+            countdownTimerState = timerStates.RUNNING
+            DispatchQueue.main.async {
+                self.countdownTimer.start()
+                self.progressBar.start()
+                self.startBtn.setTitle("PAUSE",for: .normal)
+                self.setNotification(notificationType: self.cycleCountLabel.text!)
+            }
+        }
+        if !didReceiveMessageFromWatch {
+            setWatchTimer(sec: countdownTimer.getDuratiion())
+        }
     }
     
     @IBAction func skipCycle(_ sender: UIButton) {
@@ -263,23 +279,26 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     }
     
     @IBAction func stopTimer(_ sender: UIButton) {
-        countdownTimer.stop()
-        progressBar.stop()
         countdownTimerState = timerStates.STOPPED
         isTimeForBreak = false
         pomoCycleCounter = 0
-        stopBtn.isEnabled = false
-        nextBtn.isEnabled = false
-        startBtn.setTitle("START",for: .normal)
+        DispatchQueue.main.async {
+            self.countdownTimer.stop()
+            self.progressBar.stop()
+            self.stopBtn.isEnabled = false
+            self.nextBtn.isEnabled = false
+            self.startBtn.setTitle("START",for: .normal)
+        }
         setupCountdownTimer()
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
-        setWatchTimer(sec: countdownTimer.getDuratiion())
+        if !didReceiveMessageFromWatch {
+            setWatchTimer(sec: countdownTimer.getDuratiion())
+        }
         print(selectedTask?.workedHours ?? 0)
     }
     
     @objc func pauseWhenBackground(noti: Notification) {
         if countdownTimerState == timerStates.RUNNING {
-            print("hthz")
             let shared = UserDefaults.standard
             shared.set(Date(), forKey: "savedTime")
         }
@@ -287,9 +306,16 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     @objc func willEnterForeground(noti: Notification) {
         if countdownTimerState == timerStates.RUNNING {
-            print("ffh")
             let timeInBackground = countdownTimer.resumeFromBackground()
             updateData(sec: timeInBackground)
+        }
+    }
+    
+    @objc func willTerminateApplication(noti: Notification) {
+        if wcSession?.isPaired ?? false && wcSession?.isWatchAppInstalled ?? false {
+            wcSession?.sendMessage(["action":"TERMINATED"], replyHandler: nil) { (error) in
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -315,15 +341,33 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     
     func setWatchTimer(sec:Double) {
         if wcSession?.isPaired ?? false && wcSession?.isWatchAppInstalled ?? false {
-            wcSession?.sendMessage(["action":countdownTimerState.rawValue, "duration":sec.description], replyHandler: nil) { (error) in
+            wcSession?.sendMessage(["action":countdownTimerState.rawValue, "duration":sec.description, "title":cycleCountLabel.text ?? ""], replyHandler: nil) { (error) in
                 print(error.localizedDescription)
             }
         }
     }
     
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if message["request"] as! String == "true" {
+            didReceiveMessageFromWatch = true
+            if message["action"] as! String == timerStates.STOPPED.rawValue {
+                stopTimer(stopBtn)
+            } else if message["action"] as! String == "SKIP" {
+                skipCycle(nextBtn)
+            } else if !(message["action"] as! String).isEmpty {
+                startTimer(startBtn)
+            }
+            replyHandler(["action":countdownTimerState.rawValue, "duration":countdownTimer.getDuratiion().description, "title":titleText])
+        }
+        didReceiveMessageFromWatch = false
+    }
+
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     
-    func sessionDidBecomeInactive(_ session: WCSession) {}
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("sessionDidBecomeInactive")
+    }
     
-    func sessionDidDeactivate(_ session: WCSession) {}
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("sessionDidDeactivate")}
 }
