@@ -3,6 +3,7 @@
     <entity name="Day" representedClassName="Day" syncable="YES" codeGenerationType="class">
         <attribute name="breakMinutesInSeconds" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="intervals" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="workedHoursInSeconds" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="days" inverseEntity="Task"/>
     </entity>
@@ -15,7 +16,7 @@
         <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="tasks" inverseEntity="Day"/>
     </entity>
     <elements>
-        <element name="Day" positionX="144.42578125" positionY="-11.546875" width="128" height="103"/>
+        <element name="Day" positionX="144.42578125" positionY="-11.546875" width="128" height="118"/>
         <element name="Task" positionX="-80.73828125" positionY="-39.11328125" width="128" height="133"/>
     </elements>
 </model>

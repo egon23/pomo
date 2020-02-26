@@ -75,12 +75,14 @@ class CountdownTimer {
     }
     
     fileprivate func timeString(time:TimeInterval) -> (hours: String, minutes:String, seconds:String) {
-        
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         
-        return (hours: String(format:"%02i", hours), minutes: String(format:"%02i", minutes), seconds: String(format:"%02i", seconds))
+        return (
+            hours: hours < 0 ? "00" : String(format:"%02i", hours),
+            minutes: minutes < 0 ? "00" : String(format:"%02i", minutes),
+            seconds: seconds < 0 ? "00" : String(format:"%02i", seconds))
     }
     
     fileprivate func timerDone() {

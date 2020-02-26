@@ -28,6 +28,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     var selectedTask: Task?
     var wcSession: WCSession?
     var didReceiveMessageFromWatch = false
+    var isPomoSkipped = false
     var titleText = ""
     
     lazy var countdownTimer: CountdownTimer = {
@@ -89,6 +90,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             day?.date = Date()
             day?.workedHoursInSeconds = 0.0
             day?.breakMinutesInSeconds = 0.0
+            day?.intervals = 0
             day?.tasks = []
         }
     }
@@ -204,6 +206,10 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
             self.startBtn.setTitle("START",for: .normal)
             self.progressBar.stop()
         }
+        if !isPomoSkipped && !isTimeForBreak {
+            day?.intervals += 1
+            UIApplication.appDelegate.saveContext()
+        }
     }
     
     func updateData(sec: Double) {
@@ -273,9 +279,11 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     }
     
     @IBAction func skipCycle(_ sender: UIButton) {
+        isPomoSkipped = true
         countdownTimer.stop()
         countdownTimerDone()
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["timmerDone"])
+        isPomoSkipped = false
     }
     
     @IBAction func stopTimer(_ sender: UIButton) {
