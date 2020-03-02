@@ -12,6 +12,7 @@ import WatchConnectivity
 
 class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, AddTaskDelegate, WCSessionDelegate {
     
+    //MARK: - Vars
     enum timerStates: String {
         case RUNNING = "RUNNING"
         case PAUSED = "PAUSED"
@@ -35,7 +36,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         let countdownTimer = CountdownTimer()
         return countdownTimer
     }()
-    
+
+    //MARK: - Outlets
     @IBOutlet weak var progressBar: ProgressBarView!
     @IBOutlet weak var minutes: UILabel!
     @IBOutlet weak var seconds: UILabel!
@@ -148,7 +150,6 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     }
     
     /// set current task
-    /// - Parameter sender: <#sender description#>
     @objc func setTask(sender:UIButton) {
         taskField.text = tasks[myPicker.selectedRow(inComponent: 0)].name
         self.taskField.resignFirstResponder() // To resign the inputView on clicking done.
@@ -191,6 +192,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
 
     //MARK: - Countdown Timer Delegate
     
+    /// Update UI timer
+    /// - Parameter time: current time
     func countdownTime(time: (hours: String, minutes: String, seconds: String)) {
         DispatchQueue.main.async {
             self.minutes.text = time.minutes
@@ -199,7 +202,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         updateData(sec: 1)
     }
     
-    
+    /// finishes timer and sets the next interval
     func countdownTimerDone() {
         countdownTimerState = timerStates.STOPPED
         setupCountdownTimer()
@@ -215,6 +218,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// update CoreData
+    /// - Parameter sec: seconds to add
     func updateData(sec: Double) {
         if isTimeForBreak { // pomodoro is not in break mode
             selectedTask?.workedHours += sec
@@ -251,6 +256,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// if timer is stopped or paused, it starts the timer
+    /// if timer is running, it pauses the timer
+    /// - Parameter sender: start button
     @IBAction func startTimer(_ sender: UIButton) {
         if day == nil || !Calendar.current.isDateInToday((day?.date!)!) {
             setCurrentDay()
@@ -281,6 +289,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// jumps to next interval
+    /// - Parameter sender: next button
     @IBAction func skipCycle(_ sender: UIButton) {
         isPomoSkipped = true
         countdownTimer.stop()
@@ -289,6 +299,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         isPomoSkipped = false
     }
     
+    /// stops the current timer and sets it to the first interval
+    /// - Parameter sender: stop button
     @IBAction func stopTimer(_ sender: UIButton) {
         countdownTimerState = timerStates.STOPPED
         isTimeForBreak = false
@@ -308,6 +320,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         print(selectedTask?.workedHours ?? 0)
     }
     
+    /// called when app goes in background
+    /// it saves the time when app become inactive
+    /// - Parameter noti: notification
     @objc func pauseWhenBackground(noti: Notification) {
         if countdownTimerState == timerStates.RUNNING {
             let shared = UserDefaults.standard
@@ -315,6 +330,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// called when app comes back from background
+    /// it calculates the time where the app was inactive and updates CoreData
+    /// - Parameter noti: notification
     @objc func willEnterForeground(noti: Notification) {
         if countdownTimerState == timerStates.RUNNING {
             let timeInBackground = countdownTimer.resumeFromBackground()
@@ -330,6 +348,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// notify user when timer finished
+    /// - Parameter notificationType: Pomodoro or Break
     func setNotification(notificationType: String) {
         
         let content = UNMutableNotificationContent()
@@ -350,6 +370,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// send action instructions like start, pause, skip or stop to Apple Watch app
+    /// - Parameter sec: current duration of timer
     func setWatchTimer(sec:Double) {
         if wcSession?.isPaired ?? false && wcSession?.isWatchAppInstalled ?? false {
             wcSession?.sendMessage(["action":countdownTimerState.rawValue, "duration":sec.description, "title":cycleCountLabel.text ?? ""], replyHandler: nil) { (error) in
@@ -358,6 +380,11 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// receive action instructions like start, pause, skip or stop from Apple Watch app
+    /// - Parameters:
+    ///   - session: Watch session
+    ///   - message: message from Watch
+    ///   - replyHandler: sending back reply about current action
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if message["request"] as! String == "true" {
             didReceiveMessageFromWatch = true
