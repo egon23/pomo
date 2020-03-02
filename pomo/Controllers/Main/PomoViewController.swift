@@ -110,6 +110,8 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         }
     }
     
+    /// shows PickerView
+    /// - Parameter sender: button
     @IBAction func selectTask(_ sender: UITextField) {
         if !tasks.isEmpty {
             let tintColor: UIColor = UIColor(red: 101.0/255.0, green: 98.0/255.0, blue: 164.0/255.0, alpha: 1.0)
@@ -145,8 +147,9 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         self.taskField.resignFirstResponder() // To resign the inputView on clicking done.
     }
     
+    /// set current task
+    /// - Parameter sender: <#sender description#>
     @objc func setTask(sender:UIButton) {
-        //Remove view when select cancel
         taskField.text = tasks[myPicker.selectedRow(inComponent: 0)].name
         self.taskField.resignFirstResponder() // To resign the inputView on clicking done.
         selectedTask = tasks[myPicker.selectedRow(inComponent: 0)]
