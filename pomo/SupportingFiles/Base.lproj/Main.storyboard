@@ -266,70 +266,39 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-eh-Nbo" customClass="ProgressBarView" customModule="pomo" customModuleProvider="target">
                                 <rect key="frame" x="32" y="144" width="350" height="350"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="mfB-3B-GYE"/>
-                                    <constraint firstAttribute="width" constant="350" id="w2x-3E-keD"/>
+                                    <constraint firstAttribute="width" secondItem="UaR-eh-Nbo" secondAttribute="height" multiplier="1:1" id="7C6-nu-niw"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owb-Jl-a5r">
-                                <rect key="frame" x="123.5" y="295" width="167" height="48"/>
+                                <rect key="frame" x="124" y="291.5" width="166.5" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kt-iq-qv3">
-                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="LQM-eN-Unx"/>
-                                            <constraint firstAttribute="height" constant="48" id="N2u-WH-0pJ"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="55"/>
                                         <fontDescription key="fontDescription" name="Gotham-Thin" family="Gotham" pointSize="55"/>
                                         <color key="textColor" white="1" alpha="0.91257702460000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wq-OV-mPd">
-                                        <rect key="frame" x="78.5" y="0.0" width="10" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="9VB-Jq-bdj"/>
-                                            <constraint firstAttribute="width" constant="10" id="nG2-rX-lbO"/>
-                                        </constraints>
+                                        <rect key="frame" x="78.5" y="0.0" width="9.5" height="55"/>
                                         <fontDescription key="fontDescription" name="Gotham-Thin" family="Gotham" pointSize="55"/>
                                         <color key="textColor" white="1" alpha="0.91257702460000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qk-e4-jh4">
-                                        <rect key="frame" x="88.5" y="0.0" width="78.5" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="cQv-Us-DQW"/>
-                                        </constraints>
+                                        <rect key="frame" x="88" y="0.0" width="78.5" height="55"/>
                                         <fontDescription key="fontDescription" name="Gotham-Thin" family="Gotham" pointSize="55"/>
                                         <color key="textColor" white="1" alpha="0.91257702460000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="aa3-Ux-95v"/>
-                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-UT-kMl" customClass="RoundButton" customModule="pomo" customModuleProvider="target">
-                                <rect key="frame" x="132" y="656.5" width="150" height="45"/>
-                                <color key="backgroundColor" red="0.0039215686274509803" green="0.96862745098039216" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="N0B-Hq-B6Q"/>
-                                    <constraint firstAttribute="height" constant="45" id="yoK-HJ-0p2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="30"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="START"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="17"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="startTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="NTW-xA-X98"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-Ic-oUF">
                                 <rect key="frame" x="50" y="733.5" width="37.5" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zsf-Ic-oUF" secondAttribute="height" multiplier="37:34" id="P5e-a3-hZy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="stop.fill" catalog="system">
@@ -339,8 +308,8 @@
                                     <action selector="stopTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8eH-xz-gQc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a task" textAlignment="center" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="err-br-tXO">
-                                <rect key="frame" x="93.5" y="569" width="227" height="37.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a task" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="err-br-tXO">
+                                <rect key="frame" x="93.5" y="569" width="227" height="36"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -354,7 +323,10 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juu-Ck-B2R">
-                                <rect key="frame" x="308.5" y="734.5" width="55.5" height="33.5"/>
+                                <rect key="frame" x="308" y="734.5" width="56" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Juu-Ck-B2R" secondAttribute="height" multiplier="5:3" id="KHA-M7-bRh"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="forward.fill" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,31 +336,56 @@
                                     <action selector="skipCycle:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="EIl-zX-KIt"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Pomodoro" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ry-50-mGv">
-                                <rect key="frame" x="116" y="64" width="182.5" height="30"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Pomodoro" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7ry-50-mGv">
+                                <rect key="frame" x="116" y="74" width="182.5" height="30"/>
                                 <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="4" height="3"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-UT-kMl" customClass="RoundButton" customModule="pomo" customModuleProvider="target">
+                                <rect key="frame" x="129.5" y="656" width="155" height="42"/>
+                                <color key="backgroundColor" red="0.0039215686274509803" green="0.96862745098039216" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="START"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="NTW-xA-X98"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.11372549019607843" green="0.72549019607843135" blue="0.32941176470588235" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="trailing" secondItem="Juu-Ck-B2R" secondAttribute="trailing" constant="50" id="2S5-VH-ahp"/>
-                            <constraint firstItem="7ry-50-mGv" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="5oY-au-duW"/>
-                            <constraint firstItem="err-br-tXO" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="9j6-qE-foI"/>
-                            <constraint firstItem="7ry-50-mGv" firstAttribute="top" secondItem="nxs-Xk-O2M" secondAttribute="top" constant="20" id="L8Q-FX-kgE"/>
-                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="top" secondItem="7ry-50-mGv" secondAttribute="bottom" constant="50" id="Nz3-iF-PQ9"/>
-                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="zsf-Ic-oUF" secondAttribute="bottom" constant="45" id="RbH-o5-H6E"/>
-                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="VNJ-Tz-vHb"/>
-                            <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="Z0I-Vp-z4q"/>
-                            <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerY" secondItem="UaR-eh-Nbo" secondAttribute="centerY" id="a4s-Q9-XP2"/>
-                            <constraint firstItem="CCv-UT-kMl" firstAttribute="top" secondItem="err-br-tXO" secondAttribute="bottom" constant="50" id="eUT-ya-jwD"/>
-                            <constraint firstItem="err-br-tXO" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="75" id="h6o-g1-AHb"/>
-                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="leading" secondItem="nxs-Xk-O2M" secondAttribute="leading" constant="50" id="xDn-Hp-LjY"/>
-                            <constraint firstItem="CCv-UT-kMl" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="xri-VU-vXh"/>
-                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="Juu-Ck-B2R" secondAttribute="bottom" constant="45" id="xuV-BT-OBU"/>
+                            <constraint firstItem="Juu-Ck-B2R" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.134058" id="0cl-Yc-A0P"/>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="Juu-Ck-B2R" secondAttribute="bottom" constant="45" id="2VF-EO-afv"/>
+                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="leading" secondItem="nxs-Xk-O2M" secondAttribute="leading" constant="50" id="84c-tA-VLG"/>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="zsf-Ic-oUF" secondAttribute="bottom" constant="45" id="AqL-Bb-dKy"/>
+                            <constraint firstItem="err-br-tXO" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.548309" id="EZO-ee-MIa"/>
+                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="top" secondItem="7ry-50-mGv" secondAttribute="bottom" constant="40" id="Hpd-sr-u7S"/>
+                            <constraint firstItem="CCv-UT-kMl" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="RYf-4O-jib"/>
+                            <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerY" secondItem="UaR-eh-Nbo" secondAttribute="centerY" id="Rw9-sl-7mo"/>
+                            <constraint firstItem="CCv-UT-kMl" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.243961" constant="54" id="SZB-81-HBf"/>
+                            <constraint firstItem="Juu-Ck-B2R" firstAttribute="height" secondItem="r40-wx-T0e" secondAttribute="height" multiplier="0.0412054" id="TuJ-I4-uUg"/>
+                            <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="VOm-Jl-joE"/>
+                            <constraint firstItem="CCv-UT-kMl" firstAttribute="top" secondItem="err-br-tXO" secondAttribute="bottom" constant="51" id="YTr-6j-mBO"/>
+                            <constraint firstItem="err-br-tXO" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="evQ-n2-GeO"/>
+                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.845411" id="irl-hb-l1m"/>
+                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="kYP-eM-ds8"/>
+                            <constraint firstItem="Juu-Ck-B2R" firstAttribute="top" secondItem="err-br-tXO" secondAttribute="bottom" constant="129.5" id="kpl-8T-XTF"/>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="trailing" secondItem="Juu-Ck-B2R" secondAttribute="trailing" constant="50" id="kqL-F2-9FK"/>
+                            <constraint firstItem="7ry-50-mGv" firstAttribute="top" secondItem="nxs-Xk-O2M" secondAttribute="top" constant="30" id="oWn-Gv-wYx"/>
+                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="height" secondItem="r40-wx-T0e" secondAttribute="height" multiplier="0.0424354" id="pqg-Cs-Z16"/>
+                            <constraint firstItem="err-br-tXO" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="75" id="qvi-xl-arq"/>
+                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.0905797" id="vAs-OR-oLQ"/>
+                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="239.5" id="w9h-Jx-93S"/>
+                            <constraint firstItem="7ry-50-mGv" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.440821" id="wQt-zu-fjh"/>
+                            <constraint firstItem="7ry-50-mGv" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="xrw-61-lUv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxs-Xk-O2M"/>
                     </view>
@@ -407,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="726"/>
+            <point key="canvasLocation" x="0.0" y="725.89285714285711"/>
         </scene>
         <!--Tasks Settings View Controller-->
         <scene sceneID="DYJ-YK-OFR">
