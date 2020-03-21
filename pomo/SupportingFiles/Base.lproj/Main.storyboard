@@ -264,13 +264,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-eh-Nbo" customClass="ProgressBarView" customModule="pomo" customModuleProvider="target">
-                                <rect key="frame" x="32" y="144" width="350" height="350"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="UaR-eh-Nbo" secondAttribute="height" multiplier="1:1" id="7C6-nu-niw"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owb-Jl-a5r">
                                 <rect key="frame" x="124" y="291.5" width="166.5" height="55"/>
                                 <subviews>
@@ -295,10 +288,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-Ic-oUF">
-                                <rect key="frame" x="50" y="733.5" width="37.5" height="34.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zsf-Ic-oUF" secondAttribute="height" multiplier="37:34" id="P5e-a3-hZy"/>
-                                </constraints>
+                                <rect key="frame" x="40" y="733.5" width="37.5" height="34.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="stop.fill" catalog="system">
@@ -308,25 +298,8 @@
                                     <action selector="stopTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="8eH-xz-gQc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a task" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="err-br-tXO">
-                                <rect key="frame" x="93.5" y="569" width="227" height="36"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES"/>
-                                </accessibility>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="36"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="changeTask:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="qTy-hF-DHx"/>
-                                    <action selector="selectTask:" destination="8rJ-Kc-sve" eventType="editingDidBegin" id="c0A-mX-AZU"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juu-Ck-B2R">
-                                <rect key="frame" x="308" y="734.5" width="56" height="33.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Juu-Ck-B2R" secondAttribute="height" multiplier="5:3" id="KHA-M7-bRh"/>
-                                </constraints>
+                                <rect key="frame" x="318.5" y="734.5" width="55.5" height="33.5"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="forward.fill" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -343,8 +316,8 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="4" height="3"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-UT-kMl" customClass="RoundButton" customModule="pomo" customModuleProvider="target">
-                                <rect key="frame" x="129.5" y="656" width="155" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-UT-kMl" customClass="RoundButton" customModule="pomo" customModuleProvider="target">
+                                <rect key="frame" x="129.5" y="602" width="155" height="42"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.96862745098039216" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,32 +331,48 @@
                                     <action selector="startTimer:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="NTW-xA-X98"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-eh-Nbo" customClass="ProgressBarView" customModule="pomo" customModuleProvider="target">
+                                <rect key="frame" x="32" y="144" width="350" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UaR-eh-Nbo" secondAttribute="height" multiplier="1:1" id="7C6-nu-niw"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a task" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="err-br-tXO">
+                                <rect key="frame" x="93.5" y="529" width="227" height="36"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="changeTask:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="qTy-hF-DHx"/>
+                                    <action selector="selectTask:" destination="8rJ-Kc-sve" eventType="editingDidBegin" id="c0A-mX-AZU"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.11372549019607843" green="0.72549019607843135" blue="0.32941176470588235" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Juu-Ck-B2R" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.134058" id="0cl-Yc-A0P"/>
                             <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="Juu-Ck-B2R" secondAttribute="bottom" constant="45" id="2VF-EO-afv"/>
-                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="leading" secondItem="nxs-Xk-O2M" secondAttribute="leading" constant="50" id="84c-tA-VLG"/>
+                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="leading" secondItem="nxs-Xk-O2M" secondAttribute="leading" constant="40" id="84c-tA-VLG"/>
                             <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" secondItem="zsf-Ic-oUF" secondAttribute="bottom" constant="45" id="AqL-Bb-dKy"/>
                             <constraint firstItem="err-br-tXO" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.548309" id="EZO-ee-MIa"/>
                             <constraint firstItem="UaR-eh-Nbo" firstAttribute="top" secondItem="7ry-50-mGv" secondAttribute="bottom" constant="40" id="Hpd-sr-u7S"/>
+                            <constraint firstItem="CCv-UT-kMl" firstAttribute="top" secondItem="err-br-tXO" secondAttribute="bottomMargin" constant="45" id="L2g-QU-Q9r"/>
+                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="leading" secondItem="nxs-Xk-O2M" secondAttribute="leading" constant="32" id="RMY-TN-0BC"/>
                             <constraint firstItem="CCv-UT-kMl" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="RYf-4O-jib"/>
                             <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerY" secondItem="UaR-eh-Nbo" secondAttribute="centerY" id="Rw9-sl-7mo"/>
+                            <constraint firstItem="err-br-tXO" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="35" id="SZ5-t7-MP9"/>
                             <constraint firstItem="CCv-UT-kMl" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.243961" constant="54" id="SZB-81-HBf"/>
-                            <constraint firstItem="Juu-Ck-B2R" firstAttribute="height" secondItem="r40-wx-T0e" secondAttribute="height" multiplier="0.0412054" id="TuJ-I4-uUg"/>
                             <constraint firstItem="Owb-Jl-a5r" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="VOm-Jl-joE"/>
-                            <constraint firstItem="CCv-UT-kMl" firstAttribute="top" secondItem="err-br-tXO" secondAttribute="bottom" constant="51" id="YTr-6j-mBO"/>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="trailing" secondItem="UaR-eh-Nbo" secondAttribute="trailing" constant="32" id="Wyg-gA-dFY"/>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CCv-UT-kMl" secondAttribute="bottomMargin" constant="45" id="dW0-8v-o9X"/>
                             <constraint firstItem="err-br-tXO" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="evQ-n2-GeO"/>
-                            <constraint firstItem="UaR-eh-Nbo" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.845411" id="irl-hb-l1m"/>
                             <constraint firstItem="UaR-eh-Nbo" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="kYP-eM-ds8"/>
-                            <constraint firstItem="Juu-Ck-B2R" firstAttribute="top" secondItem="err-br-tXO" secondAttribute="bottom" constant="129.5" id="kpl-8T-XTF"/>
-                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="trailing" secondItem="Juu-Ck-B2R" secondAttribute="trailing" constant="50" id="kqL-F2-9FK"/>
+                            <constraint firstItem="nxs-Xk-O2M" firstAttribute="trailing" secondItem="Juu-Ck-B2R" secondAttribute="trailing" constant="40" id="kqL-F2-9FK"/>
                             <constraint firstItem="7ry-50-mGv" firstAttribute="top" secondItem="nxs-Xk-O2M" secondAttribute="top" constant="30" id="oWn-Gv-wYx"/>
-                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="height" secondItem="r40-wx-T0e" secondAttribute="height" multiplier="0.0424354" id="pqg-Cs-Z16"/>
-                            <constraint firstItem="err-br-tXO" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="75" id="qvi-xl-arq"/>
-                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.0905797" id="vAs-OR-oLQ"/>
-                            <constraint firstItem="zsf-Ic-oUF" firstAttribute="top" secondItem="UaR-eh-Nbo" secondAttribute="bottom" constant="239.5" id="w9h-Jx-93S"/>
                             <constraint firstItem="7ry-50-mGv" firstAttribute="width" secondItem="r40-wx-T0e" secondAttribute="width" multiplier="0.440821" id="wQt-zu-fjh"/>
                             <constraint firstItem="7ry-50-mGv" firstAttribute="centerX" secondItem="r40-wx-T0e" secondAttribute="centerX" id="xrw-61-lUv"/>
                         </constraints>
@@ -649,7 +638,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Manage Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PQP-Oh-Rif">
-                                                    <rect key="frame" x="20" y="12" width="109" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="117" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -688,7 +677,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Intervals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DMX-vi-c6H">
-                                                    <rect key="frame" x="20" y="12" width="64" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="71.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -715,7 +704,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u6t-vQ-eax">
-                                                    <rect key="frame" x="20" y="12" width="95.5" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="107.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -739,7 +728,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M93-2L-V9d">
-                                                    <rect key="frame" x="20" y="12" width="58.5" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="63" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -763,7 +752,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lbt-Ch-pNF">
-                                                    <rect key="frame" x="20" y="12" width="92" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="102.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -787,7 +776,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="App Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0SF-Ye-0XH">
-                                                    <rect key="frame" x="20" y="12" width="69" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="77" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -832,7 +821,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J6k-lV-Rvq">
-                                                    <rect key="frame" x="20" y="12" width="55.5" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="63.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -859,7 +848,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="About us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xKe-Yu-5vJ">
-                                                    <rect key="frame" x="20" y="12" width="68.5" height="20"/>
+                                                    <rect key="frame" x="20" y="15" width="77.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>

@@ -336,6 +336,7 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
     @objc func willEnterForeground(noti: Notification) {
         if countdownTimerState == timerStates.RUNNING {
             let timeInBackground = countdownTimer.resumeFromBackground()
+       //     progressBar.resumeAnimationOnEnterForeground(timeInBackground: timeInBackground)
             updateData(sec: timeInBackground)
         }
     }

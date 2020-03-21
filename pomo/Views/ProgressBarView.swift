@@ -45,7 +45,7 @@ class ProgressBarView: UIView, CAAnimationDelegate {
         let endAngle = CGFloat(3 * Double.pi / 2)
         let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
         let gradientMaskLayer = gradientMask()
-        fgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 30.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
+        fgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 10.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
         fgProgressLayer.backgroundColor = UIColor.clear.cgColor
         fgProgressLayer.fillColor = nil
         fgProgressLayer.strokeColor = UIColor.black.cgColor
@@ -78,7 +78,7 @@ class ProgressBarView: UIView, CAAnimationDelegate {
         let endAngle = CGFloat(3 * Double.pi / 2)
         let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
         let gradientMaskLayer = gradientMaskBg()
-        bgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 30.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
+        bgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 10.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
         bgProgressLayer.backgroundColor = UIColor.clear.cgColor
         bgProgressLayer.fillColor = nil
         bgProgressLayer.strokeColor = UIColor.black.cgColor
@@ -180,6 +180,12 @@ class ProgressBarView: UIView, CAAnimationDelegate {
         fgProgressLayer.beginTime = 0.0
         let timeSincePause = fgProgressLayer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
         fgProgressLayer.beginTime = timeSincePause
+    }
+    
+    func resumeAnimationOnEnterForeground(timeInBackground: TimeInterval){
+        fgProgressLayer.speed = 1.0
+        fgProgressLayer.timeOffset = timeInBackground
+        
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
