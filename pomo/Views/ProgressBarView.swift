@@ -39,25 +39,25 @@ class ProgressBarView: UIView, CAAnimationDelegate {
     }
     
     
-    fileprivate func loadFgProgressBar() {
-        
+    func setProgressBarPath(progressLayer: CAShapeLayer, lineWidth: CGFloat, strokeEnd: CGFloat) {
         let startAngle = CGFloat(-Double.pi / 2)
         let endAngle = CGFloat(3 * Double.pi / 2)
         let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
+        progressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 10.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
+        progressLayer.lineWidth = lineWidth
+        progressLayer.strokeStart = 0.0
+        progressLayer.strokeEnd = strokeEnd
+    }
+    
+    fileprivate func loadFgProgressBar() {
+        setProgressBarPath(progressLayer: fgProgressLayer, lineWidth: 15.0, strokeEnd: 0.0)
         let gradientMaskLayer = gradientMask()
-        fgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 10.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
         fgProgressLayer.backgroundColor = UIColor.clear.cgColor
         fgProgressLayer.fillColor = nil
         fgProgressLayer.strokeColor = UIColor.black.cgColor
-        fgProgressLayer.lineWidth = 15.0
-        fgProgressLayer.strokeStart = 0.0
-        fgProgressLayer.strokeEnd = 0.0
-        
         gradientMaskLayer.mask = fgProgressLayer
         layer.addSublayer(gradientMaskLayer)
     }
-    
-    
     
     fileprivate func gradientMask() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
@@ -67,25 +67,15 @@ class ProgressBarView: UIView, CAAnimationDelegate {
         let colorBottom: AnyObject = CustomColor.summerSky.cgColor
         let arrayOfColors: [AnyObject] = [colorTop, colorBottom]
         gradientLayer.colors = arrayOfColors
-        
         return gradientLayer
     }
     
-    
-    fileprivate func loadBgProgressBar() {
-        
-        let startAngle = CGFloat(-Double.pi / 2)
-        let endAngle = CGFloat(3 * Double.pi / 2)
-        let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
+    func loadBgProgressBar() {
+        setProgressBarPath(progressLayer: bgProgressLayer, lineWidth: 4.0, strokeEnd: 1.0)
         let gradientMaskLayer = gradientMaskBg()
-        bgProgressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 10.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
         bgProgressLayer.backgroundColor = UIColor.clear.cgColor
         bgProgressLayer.fillColor = nil
         bgProgressLayer.strokeColor = UIColor.black.cgColor
-        bgProgressLayer.lineWidth = 4.0
-        bgProgressLayer.strokeStart = 0.0
-        bgProgressLayer.strokeEnd = 1.0
-        
         gradientMaskLayer.mask = bgProgressLayer
         layer.addSublayer(gradientMaskLayer)
     }

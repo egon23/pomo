@@ -80,6 +80,11 @@ class PomoViewController: UIViewController, CountdownTimerDelegate, UIPickerView
         longBreakTimeInMinutes = UserDefaults.standard.object(forKey: "longBreakLength") as? Int ?? 20
     }
     
+    override func viewDidLayoutSubviews() {
+        progressBar.setProgressBarPath(progressLayer: progressBar.bgProgressLayer, lineWidth: 4.0, strokeEnd: 1.0)
+        progressBar.setProgressBarPath(progressLayer: progressBar.fgProgressLayer, lineWidth: 15.0, strokeEnd: 0.0)
+    }
+    
     func setCurrentDay() {
         var data = try! UIApplication.appDelegate.persistentContainer.viewContext.fetch(NSFetchRequest(entityName: "Day")) as! [Day]
         data.sort{ $0.date?.compare($1.date!) == .orderedDescending}

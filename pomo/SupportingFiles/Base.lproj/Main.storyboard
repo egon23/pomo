@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -51,7 +51,7 @@
                                                     <rect key="frame" x="5" y="11" width="364" height="152"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27.01.2020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlF-rI-KIA">
-                                                            <rect key="frame" x="20" y="5" width="334" height="38.5"/>
+                                                            <rect key="frame" x="20" y="5" width="334" height="38.666666666666664"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="38.5" id="Y1t-u9-tOv"/>
                                                             </constraints>
@@ -60,7 +60,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="60" translatesAutoresizingMaskIntoConstraints="NO" id="XZ0-tf-lNM">
-                                                            <rect key="frame" x="20" y="48.5" width="100" height="95.5"/>
+                                                            <rect key="frame" x="20" y="48.666666666666664" width="100" height="95.333333333333343"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="Aha-8w-M33"/>
                                                             </constraints>
@@ -69,7 +69,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study &amp; 3 other.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCf-UA-lFZ">
-                                                            <rect key="frame" x="130" y="48.5" width="224" height="30"/>
+                                                            <rect key="frame" x="130" y="48.666666666666664" width="224" height="29.999999999999993"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="Hi8-Ov-04y"/>
                                                             </constraints>
@@ -78,7 +78,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active 2h 30 min " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUg-oZ-wGB">
-                                                            <rect key="frame" x="130" y="83.5" width="224" height="30"/>
+                                                            <rect key="frame" x="130" y="83.666666666666671" width="224" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="AAI-cT-vl5"/>
                                                             </constraints>
@@ -87,7 +87,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break 50 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNh-ek-0d2">
-                                                            <rect key="frame" x="130" y="118.5" width="224" height="26.5"/>
+                                                            <rect key="frame" x="130" y="118.66666666666664" width="224" height="26.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -265,22 +265,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owb-Jl-a5r">
-                                <rect key="frame" x="124" y="291.5" width="166.5" height="55"/>
+                                <rect key="frame" x="124" y="291.66666666666669" width="166" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kt-iq-qv3">
-                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="55"/>
                                         <fontDescription key="fontDescription" name="Gotham-Thin" family="Gotham" pointSize="55"/>
                                         <color key="textColor" white="1" alpha="0.91257702460000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wq-OV-mPd">
-                                        <rect key="frame" x="78.5" y="0.0" width="9.5" height="55"/>
+                                        <rect key="frame" x="78.333333333333343" y="0.0" width="9.3333333333333286" height="55"/>
                                         <fontDescription key="fontDescription" name="Gotham-Thin" family="Gotham" pointSize="55"/>
                                         <color key="textColor" white="1" alpha="0.91257702460000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qk-e4-jh4">
-                                        <rect key="frame" x="88" y="0.0" width="78.5" height="55"/>
+                                        <rect key="frame" x="87.666666666666657" y="0.0" width="78.333333333333343" height="55"/>
                                         <fontDescription key="fontDescription" name="Gotham-Thin" family="Gotham" pointSize="55"/>
                                         <color key="textColor" white="1" alpha="0.91257702460000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -288,7 +288,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-Ic-oUF">
-                                <rect key="frame" x="40" y="733.5" width="37.5" height="34.5"/>
+                                <rect key="frame" x="40" y="733.33333333333337" width="38" height="34.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="stop.fill" catalog="system">
@@ -299,7 +299,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juu-Ck-B2R">
-                                <rect key="frame" x="318.5" y="734.5" width="55.5" height="33.5"/>
+                                <rect key="frame" x="318.66666666666669" y="734.66666666666663" width="55.333333333333314" height="33.333333333333371"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="forward.fill" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -310,14 +310,14 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Pomodoro" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7ry-50-mGv">
-                                <rect key="frame" x="116" y="74" width="182.5" height="30"/>
+                                <rect key="frame" x="115.66666666666667" y="74" width="182.66666666666663" height="30"/>
                                 <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="4" height="3"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCv-UT-kMl" customClass="RoundButton" customModule="pomo" customModuleProvider="target">
-                                <rect key="frame" x="129.5" y="602" width="155" height="42"/>
+                                <rect key="frame" x="129.66666666666666" y="602" width="154.99999999999997" height="42"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.96862745098039216" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -338,7 +338,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a task" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="err-br-tXO">
-                                <rect key="frame" x="93.5" y="529" width="227" height="36"/>
+                                <rect key="frame" x="93.666666666666686" y="529" width="227" height="36"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -645,7 +645,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fTb-RI-cbd">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -677,14 +677,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Intervals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DMX-vi-c6H">
-                                                    <rect key="frame" x="20" y="15" width="71.5" height="17"/>
+                                                    <rect key="frame" x="20" y="15" width="71.333333333333329" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QfC-RM-eWx">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -704,14 +704,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u6t-vQ-eax">
-                                                    <rect key="frame" x="20" y="15" width="107.5" height="17"/>
+                                                    <rect key="frame" x="19.999999999999993" y="15" width="107.33333333333333" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fGG-SW-BP1">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -728,14 +728,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M93-2L-V9d">
-                                                    <rect key="frame" x="20" y="15" width="63" height="17"/>
+                                                    <rect key="frame" x="19.999999999999996" y="15" width="62.666666666666664" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XB6-8Y-F8L">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -752,14 +752,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lbt-Ch-pNF">
-                                                    <rect key="frame" x="20" y="15" width="102.5" height="17"/>
+                                                    <rect key="frame" x="19.999999999999993" y="15" width="102.33333333333333" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rZY-Wh-TpM">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -783,7 +783,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bch-95-6TN">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -821,14 +821,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J6k-lV-Rvq">
-                                                    <rect key="frame" x="20" y="15" width="63.5" height="17"/>
+                                                    <rect key="frame" x="20.000000000000004" y="15" width="63.333333333333336" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HJW-TF-5uC">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -848,14 +848,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="About us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xKe-Yu-5vJ">
-                                                    <rect key="frame" x="20" y="15" width="77.5" height="17"/>
+                                                    <rect key="frame" x="20" y="15" width="77.333333333333329" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aIq-Jq-cVq">
-                                                    <rect key="frame" x="382" y="12" width="12" height="20.5"/>
+                                                    <rect key="frame" x="382" y="11.999999999999998" width="12" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -912,7 +912,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25 Minutes" placeholder="pomoLength" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfi-rv-l4t">
-                                                    <rect key="frame" x="290.5" y="11" width="103.5" height="22"/>
+                                                    <rect key="frame" x="290.66666666666669" y="11" width="103.33333333333331" height="22"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" red="0.0039215686269999999" green="0.96862745100000003" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -945,7 +945,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5 Minutes" placeholder="shortBreakLength" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lA2-uq-aQ5">
-                                                    <rect key="frame" x="245.5" y="11" width="148.5" height="22"/>
+                                                    <rect key="frame" x="245.66666666666663" y="11" width="148.33333333333337" height="22"/>
                                                     <color key="textColor" red="0.0039215686269999999" green="0.96862745100000003" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -977,7 +977,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20 Minutes" placeholder="longBreakLength" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8o-lJ-HkS">
-                                                    <rect key="frame" x="253.5" y="11" width="140.5" height="22"/>
+                                                    <rect key="frame" x="253.66666666666663" y="11" width="140.33333333333337" height="22"/>
                                                     <color key="textColor" red="0.0039215686269999999" green="0.96862745100000003" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -1125,7 +1125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCW-VE-haC">
-                                <rect key="frame" x="93.5" y="269" width="227" height="95.5"/>
+                                <rect key="frame" x="93.666666666666671" y="269" width="226.66666666666663" height="95.666666666666686"/>
                                 <string key="text">Welcome to
 pomo</string>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
@@ -1133,7 +1133,7 @@ pomo</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyD-7a-SdC">
-                                <rect key="frame" x="86.5" y="404.5" width="241" height="90"/>
+                                <rect key="frame" x="86.666666666666686" y="404.66666666666669" width="241" height="89.666666666666686"/>
                                 <string key="text">First let us introduce
 you to the
 ‚Pomodoro Technique‘</string>
@@ -1174,7 +1174,7 @@ you to the
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3cY-NM-HDX">
-                                <rect key="frame" x="84.5" y="514" width="245" height="149"/>
+                                <rect key="frame" x="84.666666666666686" y="514" width="245" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3cY-NM-HDX" secondAttribute="height" multiplier="245:149" id="rhX-Y2-73W"/>
                                 </constraints>
@@ -1243,7 +1243,7 @@ POMODORO</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GRD-hQ-lwv">
-                                <rect key="frame" x="79.5" y="514" width="255" height="119"/>
+                                <rect key="frame" x="79.666666666666686" y="514" width="255" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GRD-hQ-lwv" secondAttribute="height" multiplier="15:7" id="5gM-3P-o52"/>
                                 </constraints>
@@ -1293,7 +1293,7 @@ to get done</string>
                                 <rect key="frame" x="79" y="124" width="256" height="256"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a break" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HOY-Re-M9V">
-                                <rect key="frame" x="87.5" y="458" width="239" height="48"/>
+                                <rect key="frame" x="87.666666666666686" y="458" width="239" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HOY-Re-M9V" secondAttribute="height" multiplier="239:48" id="zXQ-HD-EhU"/>
                                 </constraints>
@@ -1302,7 +1302,7 @@ to get done</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qjp-wZ-kUi">
-                                <rect key="frame" x="78.5" y="514" width="257.5" height="119"/>
+                                <rect key="frame" x="78.333333333333343" y="514" width="257.33333333333326" height="119.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Qjp-wZ-kUi" secondAttribute="height" multiplier="257:119" id="Se2-Zc-bVH"/>
                                 </constraints>
@@ -1361,7 +1361,7 @@ Breaks keep you fresh.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nNn-IY-Nd2">
-                                <rect key="frame" x="68.5" y="514" width="277.5" height="149.5"/>
+                                <rect key="frame" x="68.333333333333343" y="514" width="277.33333333333326" height="149.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nNn-IY-Nd2" secondAttribute="height" multiplier="277:149" id="XQu-8F-CaM"/>
                                 </constraints>
@@ -1421,7 +1421,7 @@ of 20 min.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yEJ-ah-9sV">
-                                <rect key="frame" x="101.5" y="514" width="211.5" height="119.5"/>
+                                <rect key="frame" x="101.33333333333333" y="514" width="211.33333333333337" height="119.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yEJ-ah-9sV" secondAttribute="height" multiplier="211:119" id="8wq-xs-hKz"/>
                                 </constraints>
@@ -1434,7 +1434,7 @@ to work</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cy-q5-ipm">
-                                <rect key="frame" x="118" y="663.5" width="178" height="55"/>
+                                <rect key="frame" x="118" y="663.33333333333337" width="178" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8Cy-q5-ipm" secondAttribute="height" multiplier="178:55" id="N1F-Yl-f1g"/>
@@ -1488,7 +1488,7 @@ to work</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N9Y-YX-yQj">
-                                <rect key="frame" x="102" y="302" width="210.5" height="143.5"/>
+                                <rect key="frame" x="101.66666666666667" y="302" width="210.66666666666663" height="143.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N9Y-YX-yQj" secondAttribute="height" multiplier="210:143" id="kEQ-ke-jEX"/>
                                 </constraints>
